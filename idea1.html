@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea 1 — Sticker Bomb | PikaCo</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fredoka',sans-serif;background:#FFF3E9 #FFF0F6;background:#FFF0F6;color:#4A2B3A;overflow-x:hidden;min-height:100vh}
+.doodle{position:fixed;font-size:2rem;opacity:.35;z-index:0;animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-14px) rotate(8deg)}}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:24px 18px 60px}
+.hero{text-align:center;padding:30px 0 10px}
+.logo{display:inline-block;font-size:3.2rem;font-weight:700;color:#FF4FA3;background:#fff;padding:6px 28px;border-radius:24px;border:4px solid #4A2B3A;box-shadow:6px 6px 0 #4A2B3A;transform:rotate(-2deg)}
+.tagline{font-family:'Gochi Hand',cursive;font-size:1.5rem;color:#E0448C;margin-top:18px;transform:rotate(-1deg)}
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0}
+.badge{background:#FFD6EC;border:3px solid #4A2B3A;border-radius:999px;padding:7px 16px;font-weight:600;font-size:.9rem;box-shadow:3px 3px 0 #4A2B3A}
+.badge:nth-child(odd){transform:rotate(-2deg)}.badge:nth-child(even){transform:rotate(2deg)}
+h2.sec{font-family:'Gochi Hand',cursive;font-size:2.1rem;color:#FF4FA3;text-align:center;margin:34px 0 6px;transform:rotate(-1deg)}
+.sub{text-align:center;color:#8A5A6E;font-size:.95rem;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px}
+.card{background:#fff;border:4px solid #4A2B3A;border-radius:18px;padding:14px;box-shadow:6px 6px 0 rgba(74,43,58,.9);position:relative;transition:transform .2s}
+.card:hover{transform:rotate(0) scale(1.04)!important;z-index:2}
+.card:nth-child(odd){transform:rotate(-2.5deg)}.card:nth-child(even){transform:rotate(2deg)}
+.tape{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-4deg);width:110px;height:26px;background:linear-gradient(90deg,#FFB3D9,#FF8FC7);opacity:.85;border-radius:3px}
+.pic{height:120px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:3.4rem;background:linear-gradient(135deg,#FFE3F0,#FFC9E2);border:3px dashed #FF8FC7}
+.card h3{font-size:1.05rem;margin:12px 2px 2px}
+.price{font-family:'Gochi Hand',cursive;font-size:1.35rem;color:#FF4FA3}
+.btn-row{text-align:center;margin:40px 0 10px}
+.cta{display:inline-block;background:#FF4FA3;color:#fff;text-decoration:none;font-weight:700;font-size:1.2rem;padding:16px 38px;border-radius:999px;border:4px solid #4A2B3A;box-shadow:6px 6px 0 #4A2B3A;transform:rotate(-1deg);transition:transform .15s}
+.cta:hover{transform:rotate(1deg) scale(1.05)}
+.cta2{display:inline-block;margin-top:16px;background:#fff;color:#4A2B3A;text-decoration:none;font-weight:600;padding:12px 28px;border-radius:999px;border:3px solid #4A2B3A;box-shadow:4px 4px 0 #4A2B3A}
+footer{text-align:center;margin-top:44px;font-family:'Gochi Hand',cursive;color:#B0708A;font-size:1.1rem}
+.themepick{position:fixed;bottom:0;left:0;right:0;background:#4A2B3A;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;font-size:.85rem;z-index:9}
+.themepick a{color:#FFD6EC;text-decoration:none;font-weight:700;background:#FF4FA3;padding:4px 12px;border-radius:999px}
+</style>
+</head>
+<body>
+<span class="doodle" style="top:8%;left:4%">⭐</span>
+<span class="doodle" style="top:20%;right:6%;animation-delay:.7s">💖</span>
+<span class="doodle" style="top:52%;left:2%;animation-delay:1.2s">✂️</span>
+<span class="doodle" style="top:70%;right:3%;animation-delay:.4s">🎨</span>
+<span class="doodle" style="top:88%;left:10%;animation-delay:1.6s">✨</span>
+<div class="wrap">
+  <div class="hero">
+    <span class="logo">PikaCo ✨</span>
+    <p class="tagline">custom keychains made just for YOU!</p>
+  </div>
+  <div class="badges">
+    <span class="badge">🚚 COD Available</span>
+    <span class="badge">💳 JazzCash / EasyPaisa</span>
+    <span class="badge">📦 All Pakistan Delivery</span>
+    <span class="badge">🎨 Any Name or Design</span>
+  </div>
+  <h2 class="sec">pick your fave! 💅</h2>
+  <p class="sub">every piece is 3D printed fresh, just for your order</p>
+  <div class="grid">
+    <div class="card"><span class="tape"></span><div class="pic">🔑</div><h3>Custom Name Keychain</h3><span class="price">Rs. 499</span></div>
+    <div class="card"><span class="tape"></span><div class="pic">🏍️</div><h3>Bike Number Plate</h3><span class="price">Rs. 599</span></div>
+    <div class="card"><span class="tape"></span><div class="pic">💞</div><h3>Couple Set</h3><span class="price">Rs. 899</span></div>
+    <div class="card"><span class="tape"></span><div class="pic">🇵🇰</div><h3>Urdu Name Keychain</h3><span class="price">Rs. 549</span></div>
+  </div>
+  <div class="btn-row">
+    <a class="cta" href="https://wa.me/923000000000?text=Salam!%20I%20want%20a%20custom%20keychain%20%E2%9C%A8">ORDER NOW!! 💌</a><br>
+    <a class="cta2" href="https://wa.me/923000000000">or DM us on WhatsApp 💬</a>
+  </div>
+  <footer>made with 💖 in pakistan — © PikaCo</footer>
+</div>
+<div class="themepick">💡 Preview <b>Idea 1 — Sticker Bomb</b> &nbsp; Compare:
+  <a href="idea1.html">1</a><a href="idea2.html">2</a><a href="idea3.html">3</a><a href="idea4.html">4</a><a href="idea5.html">5</a>
+</div>
+</body>
+</html>
