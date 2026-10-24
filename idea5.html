@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea 5 — Coquette Bow | PikaCo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Quicksand',sans-serif;background:#FFF5F9;color:#6B3A50;min-height:100vh;overflow-x:hidden}
+.bow{position:fixed;font-size:1.9rem;opacity:.5;z-index:0;animation:drift 6s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(6deg)}}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:34px 20px 90px}
+.hero{text-align:center;padding:24px 0 6px}
+.mini{font-size:.85rem;letter-spacing:.35em;text-transform:uppercase;color:#C98AA8;margin-bottom:10px}
+h1{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:500;color:#C42E70;letter-spacing:1px}
+h1 .amp{font-style:italic;color:#E58BB4}
+.tag{font-family:'Playfair Display',serif;font-style:italic;font-size:1.25rem;color:#9A5E7C;margin-top:10px}
+.divider{text-align:center;color:#E8A8C6;font-size:1.1rem;margin:22px 0;letter-spacing:.6em}
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.badge{background:#fff;border:1px solid #F2C4D9;border-radius:999px;padding:8px 18px;font-size:.85rem;font-weight:500;color:#B3547F;box-shadow:0 2px 10px rgba(214,90,140,.1)}
+h2.sec{font-family:'Playfair Display',serif;font-size:2rem;font-weight:500;text-align:center;color:#C42E70;margin:40px 0 4px}
+h2.sec em{font-style:italic;color:#E58BB4}
+.sub{text-align:center;font-size:.95rem;color:#A0708A;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px}
+.card{background:linear-gradient(180deg,#fff, #FFF7FB);border:1px solid #F2C4D9;border-radius:22px;padding:26px 18px 20px;text-align:center;box-shadow:0 10px 26px rgba(214,90,140,.12);transition:transform .25s,box-shadow .25s;position:relative}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(214,90,140,.2)}
+.card .ribbon{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:1.5rem}
+.card .pic{width:92px;height:92px;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:2.7rem;background:radial-gradient(circle at 35% 30%,#FFEFF6,#FBD1E4);border-radius:50%}
+.card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:500;color:#83375C;margin-top:14px}
+.card p{font-size:.82rem;color:#A87B92;margin-top:4px}
+.card .price{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:#C42E70;display:block;margin-top:8px}
+.gift{background:#fff;border:1px solid #F2C4D9;border-radius:24px;padding:30px 26px;margin-top:44px;text-align:center;box-shadow:0 10px 26px rgba(214,90,140,.1)}
+.gift h2{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:500;color:#C42E70}
+.gift p{font-size:.98rem;line-height:1.7;color:#8A5A72;margin-top:10px}
+.gift .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.chip{background:#FFF0F7;border:1px solid #F2C4D9;border-radius:999px;padding:7px 15px;font-size:.82rem;color:#B3547F}
+.cta{display:inline-block;margin-top:20px;background:linear-gradient(90deg,#D6498A,#C42E70);color:#fff;text-decoration:none;font-weight:600;font-size:1rem;padding:15px 40px;border-radius:999px;box-shadow:0 8px 22px rgba(196,46,112,.35);transition:transform .2s}
+.cta:hover{transform:translateY(-3px) scale(1.02)}
+footer{text-align:center;margin-top:46px;font-family:'Playfair Display',serif;font-style:italic;color:#C98AA8;font-size:1rem}
+.themepick{position:fixed;bottom:0;left:0;right:0;background:#5E1F3F;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;font-size:.85rem;z-index:9}
+.themepick a{color:#5E1F3F;text-decoration:none;font-weight:700;background:#FFD9EA;padding:4px 12px;border-radius:999px}
+</style>
+</head>
+<body>
+<span class="bow" style="top:7%;left:5%">🎀</span>
+<span class="bow" style="top:18%;right:7%;animation-delay:1s">🎀</span>
+<span class="bow" style="top:55%;left:3%;animation-delay:2s">✨</span>
+<span class="bow" style="top:74%;right:4%;animation-delay:1.5s">🎀</span>
+<span class="bow" style="top:38%;left:12%;animation-delay:.5s">🤍</span>
+<div class="wrap">
+  <div class="hero">
+    <p class="mini">est. 2026 · pakistan</p>
+    <h1>Pika<span class="amp">Co</span> 🎀</h1>
+    <p class="tag">custom keychains, tied with a bow</p>
+  </div>
+  <div class="divider">❀ ❀ ❀</div>
+  <div class="badges">
+    <span class="badge">🚚 COD Nationwide</span>
+    <span class="badge">💳 JazzCash / EasyPaisa</span>
+    <span class="badge">🎁 Free Gift Wrap</span>
+  </div>
+  <h2 class="sec">the <em>collection</em></h2>
+  <p class="sub">each piece printed to order — nobody else will have yours</p>
+  <div class="grid">
+    <div class="card"><span class="ribbon">🎀</span><div class="pic">🔑</div><h3>Name Keychain</h3><p>bubble or script letters</p><span class="price">Rs. 499</span></div>
+    <div class="card"><span class="ribbon">🎀</span><div class="pic">🏍️</div><h3>Bike Number Plate</h3><p>your digits, miniature</p><span class="price">Rs. 599</span></div>
+    <div class="card"><span class="ribbon">🤍</span><div class="pic">💞</div><h3>Couple Set</h3><p>two halves, one heart</p><span class="price">Rs. 899</span></div>
+    <div class="card"><span class="ribbon">🎀</span><div class="pic">🇵🇰</div><h3>Urdu Name</h3><p>elegant nastaliq script</p><span class="price">Rs. 549</span></div>
+  </div>
+  <div class="gift">
+    <h2>gifting someone? 🎁</h2>
+    <p>every order arrives in a soft pink box with a handwritten note — tell us the message and we'll write it in our best cursive. birthdays, anniversaries, "just because" — we handle the details, you get the credit.</p>
+    <div class="row">
+      <span class="chip">💌 handwritten note</span>
+      <span class="chip">🎀 ribbon wrapped</span>
+      <span class="chip">📦 bubble protected</span>
+    </div>
+    <a class="cta" href="https://wa.me/923000000000?text=Salam!%20I%27d%20love%20a%20custom%20keychain%20%F0%9F%8E%80">order on whatsapp 💌</a>
+  </div>
+  <footer>© PikaCo — softness is a strategy 🎀</footer>
+</div>
+<div class="themepick">💡 Preview <b>Idea 5 — Coquette Bow</b> &nbsp; Compare:
+  <a href="idea1.html">1</a><a href="idea2.html">2</a><a href="idea3.html">3</a><a href="idea4.html">4</a><a href="idea5.html">5</a>
+</div>
+</body>
+</html>
