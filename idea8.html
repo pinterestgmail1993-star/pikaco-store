@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea 8 — Sticker Journal | PikaCo</title>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Fredoka:wght@500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fredoka',sans-serif;background:repeating-linear-gradient(45deg,#FFD9EC,#FFD9EC 26px,#FFCFE7 26px,#FFCFE7 52px);color:#4A2B3A;min-height:100vh;padding:28px 14px 90px}
+.journal{max-width:700px;margin:0 auto;background:#FFFDFB;border-radius:10px;box-shadow:0 16px 44px rgba(160,50,105,.3);padding:0 0 40px;overflow:hidden;position:relative}
+.washi-top{height:34px;background:repeating-linear-gradient(90deg,#FF8FC7 0 18px,#FFB3D9 18px 36px,#FFD6EC 36px 54px);position:relative}
+.washi-top::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,0))}
+.head{padding:26px 30px 8px;position:relative}
+.datebox{display:inline-block;border:3px solid #FF4FA3;border-radius:10px;padding:6px 14px;font-family:'Gochi Hand',cursive;font-size:1.15rem;color:#E0448C;transform:rotate(-2deg);background:#fff}
+h1{font-family:'Caveat',cursive;font-size:3.6rem;color:#FF4FA3;line-height:1;margin:10px 0 0}
+h1 span{color:#4A2B3A}
+.sub{font-family:'Gochi Hand',cursive;font-size:1.3rem;color:#8A5A6E;margin-top:2px}
+.stickersheet{padding:20px 26px 6px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+.sticker{position:relative;background:#fff;border-radius:20px;padding:20px 14px 16px;text-align:center;border:5px solid #fff;outline:3px solid #FFD6EC;box-shadow:0 10px 22px rgba(200,70,130,.28);transition:transform .2s}
+.sticker:hover{transform:scale(1.07) rotate(0)!important;z-index:2}
+.sticker:nth-child(odd){transform:rotate(-4deg)}
+.sticker:nth-child(even){transform:rotate(3deg)}
+.sticker:nth-child(3n){transform:rotate(5deg)}
+.sticker .emo{font-size:3rem;display:block;filter:drop-shadow(0 4px 6px rgba(200,70,130,.3))}
+.sticker h3{font-size:1rem;font-weight:600;margin-top:8px}
+.sticker p{font-family:'Gochi Hand',cursive;font-size:.95rem;color:#9A6A80;line-height:1.3}
+.sticker .price{font-family:'Caveat',cursive;font-size:1.7rem;color:#FF4FA3;display:block;margin-top:4px}
+.sticker .shine{position:absolute;top:6px;right:12px;font-size:1rem}
+.section{padding:28px 30px 0}
+h2{font-family:'Caveat',cursive;font-size:2.4rem;color:#E0448C}
+h2 .underline{background:linear-gradient(transparent 62%,#FFD6EC 62%);padding:0 4px}
+.list{margin-top:10px}
+.list p{font-family:'Gochi Hand',cursive;font-size:1.2rem;color:#5C374C;margin:8px 0;padding-left:30px;position:relative}
+.list p::before{content:"✿";position:absolute;left:4px;color:#FF4FA3}
+.cta-wrap{text-align:center;padding:30px 20px 0}
+.cta{display:inline-block;background:#FF4FA3;color:#fff;text-decoration:none;font-weight:700;font-size:1.2rem;padding:16px 40px;border-radius:999px;border:4px solid #fff;outline:3px solid #FF4FA3;box-shadow:0 8px 20px rgba(255,79,163,.4);transform:rotate(-2deg);transition:transform .15s}
+.cta:hover{transform:rotate(1deg) scale(1.04)}
+.or{font-family:'Gochi Hand',cursive;color:#9A6A80;margin-top:10px;font-size:1.05rem}
+footer{text-align:center;font-family:'Gochi Hand',cursive;color:#B0708A;margin-top:30px;font-size:1.1rem}
+.themepick{position:fixed;bottom:0;left:0;right:0;background:#4A2B3A;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;font-size:.85rem;z-index:9}
+.themepick a{color:#4A2B3A;text-decoration:none;font-weight:700;background:#FFB3D9;padding:4px 12px;border-radius:999px}
+.themepick a.on{background:#FF4FA3;color:#fff}
+</style>
+</head>
+<body>
+<div class="journal">
+  <div class="washi-top"></div>
+  <div class="head">
+    <span class="datebox">week 43 · oct 24 · friday 🌸</span>
+    <h1>PikaCo <span>sticker journal!</span></h1>
+    <p class="sub">my keychains, but make them stickers u can collect ✨</p>
+  </div>
+  <div class="stickersheet">
+    <div class="sticker"><span class="shine">✨</span><span class="emo">🔑</span><h3>Name Keychain</h3><p>any name · any font</p><span class="price">Rs. 499</span></div>
+    <div class="sticker"><span class="shine">✨</span><span class="emo">🏍️</span><h3>Bike Plate</h3><p>your exact number</p><span class="price">Rs. 599</span></div>
+    <div class="sticker"><span class="shine">💖</span><span class="emo">💞</span><h3>Couple Set</h3><p>2 halves · 1 heart</p><span class="price">Rs. 899</span></div>
+    <div class="sticker"><span class="shine">✨</span><span class="emo">🇵🇰</span><h3>Urdu Name</h3><p>nastaliq script</p><span class="price">Rs. 549</span></div>
+  </div>
+  <div class="section">
+    <h2>how to get <span class="underline">yours</span> 💌</h2>
+    <div class="list">
+      <p>step 1 — pick a design (or send ur own idea, we love weird ideas)</p>
+      <p>step 2 — pay COD on delivery, or advance on JazzCash / EasyPaisa</p>
+      <p>step 3 — we print, pack in bubble wrap + cute box, ship it</p>
+      <p>step 4 — 2–3 din me doorstep pe. unbox. scream (cutely).</p>
+    </div>
+  </div>
+  <div class="cta-wrap">
+    <a class="cta" href="https://wa.me/923000000000?text=Salam!%20I%20want%20to%20collect%20a%20PikaCo%20keychain%20%F0%9F%8C%B8">start collecting! 🌸</a>
+    <p class="or">opens WhatsApp — we reply faster than ammi finds your phone</p>
+  </div>
+  <footer>stickers > words. © PikaCo 🌸</footer>
+</div>
+<div class="themepick">💡 <b>Idea 8 — Sticker Journal</b> · Compare:
+  <a href="idea6.html">6</a><a href="idea7.html">7</a><a class="on" href="idea8.html">8</a><a href="idea9.html">9</a><a href="idea10.html">10</a>
+</div>
+</body>
+</html>
