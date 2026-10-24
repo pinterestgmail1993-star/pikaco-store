@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PikaCo — Custom 3D Printed Keychains in Pakistan</title>
+<meta name="description" content="PikaCo designs and 3D prints personalized keychains and gifts. COD across Pakistan, JazzCash and EasyPaisa accepted.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Sans',sans-serif;background:#FAF6EF;color:#3A2E26;line-height:1.65}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.container{max-width:1060px;margin:0 auto;padding:0 24px}
+/* HEADER — topbar + masthead nav */
+.topbar{background:#3A2E26;color:#E8DCCE;text-align:center;font-size:.78rem;letter-spacing:.1em;padding:8px 16px;text-transform:uppercase}
+.topbar b{color:#E2A696}
+header{border-bottom:1px solid #E5D9C9;background:#FAF6EF}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#3A2E26;text-decoration:none}
+.logo em{color:#B85C42;font-style:italic}
+.navlinks{display:flex;gap:28px}
+.navlinks a{color:#6E5A4A;text-decoration:none;font-size:.88rem;font-weight:500}
+.navlinks a:hover{color:#B85C42}
+.btn{display:inline-block;background:#B85C42;color:#FAF6EF;text-decoration:none;font-weight:600;font-size:.9rem;padding:12px 26px;border-radius:3px;transition:background .2s}
+.btn:hover{background:#9A4A34}
+.btn.ghost{background:transparent;color:#3A2E26;border:1.5px solid #C9B8A2}
+.btn.ghost:hover{border-color:#B85C42;color:#B85C42}
+@media(max-width:800px){.navlinks{display:none}}
+/* HERO — centered masthead style */
+.hero{text-align:center;padding:90px 0 70px;border-bottom:1px solid #E5D9C9}
+.mast{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#B85C42;font-weight:600;margin-bottom:20px}
+h1{font-size:3.4rem;line-height:1.12;font-weight:600;max-width:800px;margin:0 auto 20px;color:#33281F}
+h1 em{font-style:italic;color:#B85C42}
+.hero p.lead{max-width:520px;margin:0 auto 32px;color:#7A6656;font-size:1.05rem}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-rule{width:60px;height:2px;background:#C9B8A2;margin:44px auto 0}
+/* STATS */
+.stats .container{display:grid;grid-template-columns:repeat(4,1fr);padding-top:30px;padding-bottom:30px;text-align:center;border-bottom:1px solid #E5D9C9}
+.stats b{display:block;font-family:'Playfair Display',serif;font-size:1.55rem;color:#B85C42}
+.stats small{color:#8A7462;font-size:.8rem}
+@media(max-width:640px){.stats .container{grid-template-columns:1fr 1fr;gap:20px}}
+/* PRODUCTS — offset 2-col rows */
+section{padding:80px 0}
+.sh{text-align:center;margin-bottom:52px}
+.kick{font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:#B85C42;font-weight:600}
+h2.st{font-size:2.3rem;font-weight:600;margin:12px 0 10px}
+.sh p{color:#8A7462;max-width:460px;margin:0 auto}
+.catalog{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #E5D9C9;border-radius:6px;overflow:hidden}
+.row-item{display:flex;gap:22px;padding:30px;background:#FAF6EF;border-bottom:1px solid #E5D9C9;transition:background .2s}
+.row-item:nth-child(odd){border-right:1px solid #E5D9C9}
+.row-item:hover{background:#F4EDE1}
+.row-item:nth-child(even){flex-direction:row-reverse;text-align:right}
+.row-item:nth-child(even) .info{margin-left:auto}
+@media(max-width:680px){.catalog{grid-template-columns:1fr}.row-item:nth-child(odd){border-right:none}.row-item:nth-child(even){flex-direction:row;text-align:left}.row-item:nth-child(even) .info{margin-left:0}}
+.rthumb{width:120px;height:120px;flex-shrink:0;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2.4rem;color:#B85C42;background:linear-gradient(140deg,#F1E4D2,#E4CDB4)}
+.row-item h3{font-size:1.2rem;font-weight:600;margin-bottom:6px}
+.row-item p{font-size:.88rem;color:#8A7462;margin-bottom:10px}
+.row-item .price{font-family:'Playfair Display',serif;font-size:1.15rem;color:#B85C42;font-weight:600}
+.tag{display:inline-block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:#3A2E26;color:#FAF6EF;padding:4px 10px;border-radius:3px;margin-bottom:8px}
+/* STEPS — horizontal with rules */
+.steps{background:#F4EDE1;border-top:1px solid #E5D9C9;border-bottom:1px solid #E5D9C9}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.step{padding:36px 28px;border-left:1px solid #DACBB6}
+.step:first-child{border-left:none;padding-left:0}
+.step .num{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:#B85C42}
+.step h3{font-size:1.15rem;margin:8px 0 8px}
+.step p{font-size:.9rem;color:#8A7462}
+@media(max-width:760px){.steps-grid{grid-template-columns:1fr}.step{border-left:none;border-top:1px solid #DACBB6;padding-left:0}}
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.why h3{font-size:1.1rem;margin-bottom:8px}
+.why p{font-size:.9rem;color:#8A7462}
+.why .line{width:34px;height:2px;background:#B85C42;margin-bottom:14px}
+/* QUOTE */
+.quote{max-width:640px;margin:0 auto;text-align:center}
+.quote blockquote{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;line-height:1.55;color:#4A3A2E}
+.quote cite{display:block;margin-top:18px;font-style:normal;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#B85C42}
+/* CTA */
+.band{background:#3A2E26;color:#FAF6EF;text-align:center;padding:70px 24px}
+.band h2{font-size:2.1rem;font-weight:600;margin-bottom:12px;color:#FAF6EF}
+.band p{color:#C9B8A2;margin-bottom:28px}
+.btn.cream{background:#FAF6EF;color:#3A2E26}
+.btn.cream:hover{background:#E8DCCE}
+/* FOOTER */
+footer{background:#33281F;color:#B8A48E;padding:56px 0 0}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding-bottom:42px}
+.f-grid h4{color:#FAF6EF;font-size:.95rem;margin-bottom:14px;font-weight:600}
+.f-grid a,.f-grid p{display:block;color:#B8A48E;font-size:.85rem;text-decoration:none;line-height:2.1}
+.f-grid a:hover{color:#E2A696}
+.f-bottom{border-top:1px solid #4A3A2E;text-align:center;padding:18px 0;font-size:.78rem;color:#8A7462}
+@media(max-width:760px){.f-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">Cash on Delivery Nationwide — <b>JazzCash & EasyPaisa Accepted</b></div>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">PikaCo<em> press</em></a>
+    <nav class="navlinks">
+      <a href="#catalog">Catalog</a>
+      <a href="#process">Process</a>
+      <a href="#why">Standards</a>
+    </nav>
+    <a class="btn" href="https://wa.me/923000000000">Order via WhatsApp</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <p class="mast">Custom 3D Printing — Est. Karachi 2026</p>
+    <h1>Names worth <em>printing.</em><br>Gifts worth keeping.</h1>
+    <p class="lead">A small studio making personalized keychains and name plates. Designed with you over a message, printed fresh in durable PLA, delivered anywhere in Pakistan.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="https://wa.me/923000000000">Start an Order</a>
+      <a class="btn ghost" href="#catalog">Read the Catalog</a>
+    </div>
+    <div class="hero-rule"></div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="container">
+    <div><b>500+</b><small>orders delivered</small></div>
+    <div><b>2–3 days</b><small>average delivery</small></div>
+    <div><b>2 checks</b><small>quality inspection</small></div>
+    <div><b>0</b><small>stocked items</small></div>
+  </div>
+</div>
+
+<section id="catalog">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">The Catalog — Autumn 2026</p>
+      <h2 class="st">Four pieces, endlessly personalized</h2>
+      <p>Every item is printed after you order. Pick a piece, send us the text.</p>
+    </div>
+    <div class="catalog">
+      <div class="row-item"><div class="rthumb">A</div><div class="info"><span class="tag">Bestseller</span><h3>Name Keychain</h3><p>Bubble, script or block lettering in any name you choose.</p><span class="price">Rs. 499</span></div></div>
+      <div class="row-item"><div class="rthumb">K</div><div class="info"><span class="tag">New</span><h3>Bike Number Plate</h3><p>Your exact registration number, printed miniature.</p><span class="price">Rs. 599</span></div></div>
+      <div class="row-item"><div class="rthumb">S</div><div class="info"><span class="tag">Gift pick</span><h3>Couple Keychain Set</h3><p>Two interlocking halves of one heart, boxed together.</p><span class="price">Rs. 899</span></div></div>
+      <div class="row-item"><div class="rthumb">U</div><div class="info"><h3>Urdu Name Keychain</h3><p>Nastaliq script with optional gold filament.</p><span class="price">Rs. 549</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="process">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">The Process</p>
+      <h2 class="st">Three steps, two days</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step"><span class="num">No. 01</span><h3>Send the text</h3><p>Message us the name or number. We confirm font, color and price within minutes.</p></div>
+      <div class="step"><span class="num">No. 02</span><h3>Approve the preview</h3><p>We render your design for approval. Printing starts only after your yes.</p></div>
+      <div class="step"><span class="num">No. 03</span><h3>Receive it</h3><p>COD at your doorstep in 2 to 3 days, or advance via JazzCash and EasyPaisa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">Our Standards</p>
+      <h2 class="st">What we refuse to compromise</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why"><div class="line"></div><h3>Fresh prints only</h3><p>Nothing is pre-made. Your piece is printed after you order, in your chosen color and font.</p></div>
+      <div class="why"><div class="line"></div><h3>Verified payments</h3><p>Every advance transfer is confirmed in our own JazzCash or EasyPaisa app before dispatch — never from a screenshot.</p></div>
+      <div class="why"><div class="line"></div><h3>Twice inspected</h3><p>Checked at the printer and again at packing. If the edges are not clean, it does not ship.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="container quote">
+    <blockquote>“It arrived in two days and looked better than the mall stalls charging triple. My sister has ordered three more since.”</blockquote>
+    <cite>— Hamza R. — Lahore</cite>
+  </div>
+</section>
+
+<div class="band">
+  <h2>Put a name on it</h2>
+  <p>One message is all it takes. Replies within minutes, 10am to 11pm.</p>
+  <a class="btn cream" href="https://wa.me/923000000000">Order on WhatsApp</a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="#" style="color:#FAF6EF">PikaCo<em style="color:#E2A696"> press</em></a>
+        <p style="margin-top:10px;max-width:250px">Custom 3D printed keychains and gifts, made to order in Karachi, Pakistan.</p>
+      </div>
+      <div><h4>Catalog</h4><a href="#catalog">Name Keychain</a><a href="#catalog">Bike Plate</a><a href="#catalog">Couple Set</a><a href="#catalog">Urdu Name</a></div>
+      <div><h4>Studio</h4><a href="#process">Process</a><a href="#why">Standards</a><a href="https://wa.me/923000000000">Contact</a></div>
+      <div><h4>Payments</h4><p>Cash on Delivery</p><p>JazzCash</p><p>EasyPaisa</p></div>
+    </div>
+    <div class="f-bottom">© 2026 PikaCo Press — All rights reserved</div>
+  </div>
+</footer>
+</body>
+</html>
