@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea 3 — Polaroid Wall | PikaCo</title>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Quicksand',sans-serif;background:linear-gradient(160deg,#FFE9F3 0%,#FFD0E4 55%,#F8B6D6 100%);color:#5C374C;min-height:100vh;overflow-x:hidden}
+.wrap{max-width:780px;margin:0 auto;padding:30px 18px 90px}
+.hero{text-align:center;padding-top:10px}
+h1{font-size:2.9rem;font-weight:700;color:#D63384;letter-spacing:-1px}
+h1 em{font-style:normal;color:#fff;text-shadow:2px 2px 0 #D63384}
+.tag{font-size:1.05rem;color:#8A4A68;margin-top:6px}
+/* string with clips */
+.string{position:relative;height:26px;margin:36px 0 0}
+.string .rope{position:absolute;top:8px;left:-4%;width:108%;height:3px;background:#C9789B;border-radius:3px;transform:rotate(-1deg)}
+.clip{position:absolute;top:0;width:22px;height:26px;background:#fff;border:2px solid #C9789B;border-radius:4px}
+.wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:30px;margin-top:20px}
+.pol{background:#fff;padding:12px 12px 10px;box-shadow:0 8px 22px rgba(140,40,90,.25);transition:transform .25s;position:relative}
+.pol:hover{transform:scale(1.06) rotate(0)!important;z-index:3}
+.pol:nth-child(odd){transform:rotate(-3deg)}
+.pol:nth-child(even){transform:rotate(2.5deg);margin-top:26px}
+.pol:nth-child(3n){transform:rotate(4deg)}
+.pin{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:#E0448C;border:3px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.25)}
+.img{height:130px;display:flex;align-items:center;justify-content:center;font-size:3.2rem}
+.img.a{background:linear-gradient(135deg,#FFE3F0,#FFB8DA)}
+.img.b{background:linear-gradient(135deg,#FFF0F6,#F79BC6)}
+.img.c{background:linear-gradient(135deg,#FFDCF7 0%,#FFA9D2 100%)}
+.cap{font-family:'Shadows Into Light',cursive;font-size:1.35rem;color:#7A3A58;text-align:center;padding:8px 0 2px}
+.pol .price{display:block;text-align:center;font-weight:700;color:#D63384;font-size:1.05rem;padding-bottom:4px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:44px 0 8px}
+.badge{background:rgba(255,255,255,.85);border-radius:999px;padding:9px 18px;font-weight:600;font-size:.88rem;color:#A33B69;box-shadow:0 3px 8px rgba(140,40,90,.15)}
+.story{text-align:center;max-width:520px;margin:30px auto 0;font-size:1.02rem;line-height:1.65;color:#7A3A58}
+.story b{color:#D63384}
+.cta-row{text-align:center;margin-top:36px}
+.cta{display:inline-block;background:#D63384;color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;padding:15px 36px;border-radius:999px;box-shadow:0 6px 18px rgba(214,51,132,.45);transition:transform .15s}
+.cta:hover{transform:translateY(-3px)}
+.note{margin-top:14px;font-size:.85rem;color:#A36381}
+footer{text-align:center;margin-top:50px;font-size:.9rem;color:#A36381}
+.themepick{position:fixed;bottom:0;left:0;right:0;background:#5C2340;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;font-size:.85rem;z-index:9}
+.themepick a{color:#fff;text-decoration:none;font-weight:700;background:#D63384;padding:4px 12px;border-radius:999px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>Pika<em>Co</em> 📸</h1>
+    <p class="tag">memories you can hold — custom 3D keychains</p>
+  </div>
+  <div class="string">
+    <div class="rope"></div>
+    <span class="clip" style="left:12%"></span>
+    <span class="clip" style="left:38%"></span>
+    <span class="clip" style="left:64%"></span>
+    <span class="clip" style="left:88%"></span>
+  </div>
+  <div class="wall">
+    <div class="pol"><span class="pin"></span><div class="img a">🔑</div><span class="cap">"Ayesha" in bubbles</span><span class="price">Rs. 499</span></div>
+    <div class="pol"><span class="pin"></span><div class="img b">🏍️</div><span class="cap">KHI-2907, mini version</span><span class="price">Rs. 599</span></div>
+    <div class="pol"><span class="pin"></span><div class="img c">💞</div><span class="cap">S + A, forever set</span><span class="price">Rs. 899</span></div>
+    <div class="pol"><span class="pin"></span><div class="img b">🇵🇰</div><span class="cap">urdu names = classy</span><span class="price">Rs. 549</span></div>
+    <div class="pol"><span class="pin"></span><div class="img a">✨</div><span class="cap">glow in the dark!</span><span class="price">Rs. 649</span></div>
+    <div class="pol"><span class="pin"></span><div class="img c">🎁</div><span class="cap">gift wrapped, free</span><span class="price">Rs. 0</span></div>
+  </div>
+  <div class="badges">
+    <span class="badge">🚚 COD — all Pakistan</span>
+    <span class="badge">💳 JazzCash / EasyPaisa</span>
+    <span class="badge">📦 2–3 day delivery</span>
+  </div>
+  <p class="story">every keychain starts as <b>your idea</b> — a name, a date, a tiny inside joke. we print it in strong PLA, check every edge by hand, and pack it like the little treasure it is. <b>screenshot your cart moments</b> happen here.</p>
+  <div class="cta-row">
+    <a class="cta" href="https://wa.me/923000000000?text=Salam!%20I%20want%20a%20custom%20keychain%20%F0%9F%93%B8">order yours on WhatsApp 💬</a>
+    <p class="note">reply within minutes, 10am – 11pm</p>
+  </div>
+  <footer>© PikaCo — pinned with care 💗</footer>
+</div>
+<div class="themepick">💡 Preview <b>Idea 3 — Polaroid Wall</b> &nbsp; Compare:
+  <a href="idea1.html">1</a><a href="idea2.html">2</a><a href="idea3.html">3</a><a href="idea4.html">4</a><a href="idea5.html">5</a>
+</div>
+</body>
+</html>
