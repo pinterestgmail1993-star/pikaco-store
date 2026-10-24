@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PikaCo — Custom 3D Printed Keychains in Pakistan</title>
+<meta name="description" content="PikaCo designs and 3D prints personalized keychains and gifts. COD across Pakistan, JazzCash and EasyPaisa accepted.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#FDF9F7;color:#3D2B33;line-height:1.6}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+/* HEADER */
+header{background:rgba(253,249,247,.92);border-bottom:1px solid #F0DEE5;position:sticky;top:0;z-index:50;backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:#C42E70;text-decoration:none;letter-spacing:.5px}
+.logo span{color:#3D2B33;font-weight:500;font-style:italic}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{color:#6B4A58;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+.navlinks a:hover{color:#C42E70}
+.btn{display:inline-block;background:#C42E70;color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:11px 24px;border-radius:6px;transition:background .2s}
+.btn:hover{background:#A82458}
+.btn.ghost{background:transparent;color:#C42E70;border:1.5px solid #C42E70}
+.btn.ghost:hover{background:#FBEDF3}
+@media(max-width:760px){.navlinks a{display:none}}
+/* HERO */
+.hero{padding:84px 0 72px;background:linear-gradient(180deg,#FDF9F7 0%,#FAF1F4 100%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.kicker{font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#C42E70;margin-bottom:18px}
+.kicker::before{content:"";display:inline-block;width:28px;height:1.5px;background:#C42E70;vertical-align:middle;margin-right:12px}
+h1{font-size:3.1rem;line-height:1.12;font-weight:600;color:#33202A}
+h1 em{font-style:italic;color:#C42E70}
+.hero p.lead{margin:22px 0 30px;font-size:1.08rem;color:#6B4A58;max-width:480px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{position:relative}
+.frame{background:#fff;border:1px solid #F0DEE5;padding:16px 16px 20px;box-shadow:0 20px 50px rgba(196,46,112,.14);transform:rotate(2deg)}
+.frame .tile{height:250px;background:linear-gradient(140deg,#FBE3EE,#F3C2DB);display:flex;align-items:center;justify-content:center}
+.frame .tile span{font-family:'Playfair Display',serif;font-size:5.5rem;font-weight:600;color:#C42E70}
+.frame .cap{font-family:'Playfair Display',serif;font-style:italic;color:#9A6A80;text-align:center;padding-top:14px;font-size:.95rem}
+.tape{position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);width:110px;height:26px;background:rgba(244,164,199,.75);border-left:2px dashed rgba(255,255,255,.9);border-right:2px dashed rgba(255,255,255,.9)}
+.float-card{position:absolute;bottom:-22px;right:-10px;background:#fff;border:1px solid #F0DEE5;padding:12px 18px;box-shadow:0 10px 26px rgba(196,46,112,.16);transform:rotate(-3deg)}
+.float-card b{color:#C42E70;font-size:1.05rem}
+.float-card small{display:block;color:#8A6A78;font-size:.75rem}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:60px}.hero-visual{max-width:360px}}
+/* STATS STRIP */
+.stats{border-top:1px solid #F0DEE5;border-bottom:1px solid #F0DEE5;background:#fff}
+.stats .container{display:grid;grid-template-columns:repeat(4,1fr);padding-top:26px;padding-bottom:26px;text-align:center}
+.stats b{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;color:#C42E70}
+.stats small{color:#8A6A78;font-size:.8rem;letter-spacing:.05em}
+@media(max-width:640px){.stats .container{grid-template-columns:1fr 1fr;gap:18px}}
+/* SECTIONS */
+section{padding:76px 0}
+.sec-label{font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#C42E70;text-align:center}
+h2.sec-title{font-size:2.2rem;font-weight:600;text-align:center;margin:10px 0 8px;color:#33202A}
+p.sec-sub{text-align:center;color:#8A6A78;max-width:520px;margin:0 auto 44px}
+/* PRODUCTS */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.pcard{background:#fff;border:1px solid #F0DEE5;border-radius:10px;overflow:hidden;transition:transform .25s,box-shadow .25s;position:relative}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(196,46,112,.14)}
+.pcard .thumb{height:150px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:600;color:#C42E70}
+.pcard:nth-child(1) .thumb{background:linear-gradient(140deg,#FBE3EE,#F6C9DE)}
+.pcard:nth-child(2) .thumb{background:linear-gradient(140deg,#F6E7F0,#EBC6DD)}
+.pcard:nth-child(3) .thumb{background:linear-gradient(140deg,#FBEDF3,#F3CFE2)}
+.pcard:nth-child(4) .thumb{background:linear-gradient(140deg,#F7E3EC,#EDC2D8)}
+.pcard .body{padding:18px 18px 20px}
+.pcard h3{font-size:1.08rem;font-weight:600;color:#33202A}
+.pcard p{font-size:.85rem;color:#8A6A78;margin:6px 0 12px}
+.pcard .price{font-family:'Playfair Display',serif;font-size:1.15rem;color:#C42E70;font-weight:600}
+/* STEPS */
+.steps{background:#fff;border-top:1px solid #F0DEE5;border-bottom:1px solid #F0DEE5}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
+.step .num{font-family:'Playfair Display',serif;font-size:2.2rem;color:#E8B4CB;font-weight:700;line-height:1}
+.step h3{font-size:1.12rem;margin:10px 0 8px;color:#33202A}
+.step p{font-size:.92rem;color:#8A6A78}
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
+.why{border-left:2px solid #F3C9DC;padding-left:18px}
+.why h3{font-size:1.08rem;color:#33202A;margin-bottom:6px}
+.why p{font-size:.9rem;color:#8A6A78}
+/* TESTIMONIAL */
+.quote{max-width:680px;margin:0 auto;text-align:center}
+.quote blockquote{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;color:#4A3540;line-height:1.5}
+.quote cite{display:block;margin-top:18px;font-style:normal;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:#C42E70}
+/* CTA BAND */
+.band{background:#C42E70;color:#fff;text-align:center;padding:64px 24px}
+.band h2{font-size:2rem;font-weight:600;margin-bottom:10px}
+.band p{color:#F9D7E7;margin-bottom:26px}
+.btn.white{background:#fff;color:#C42E70}
+.btn.white:hover{background:#FBE9F1}
+/* FOOTER */
+footer{background:#2E1B24;color:#C9A8B8;padding:56px 0 0}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:40px}
+.f-grid h4{color:#fff;font-size:.95rem;margin-bottom:14px;font-weight:600}
+.f-grid p,.f-grid a{font-size:.85rem;color:#B98CA1;text-decoration:none;line-height:2;display:block}
+.f-grid a:hover{color:#fff}
+.f-brand .logo{color:#F4A7C8;font-size:1.3rem}
+.f-brand p{margin-top:10px;max-width:260px}
+.f-bottom{border-top:1px solid #46303C;padding:18px 0;text-align:center;font-size:.78rem;color:#8A6A78}
+@media(max-width:760px){.f-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">PikaCo<span> studio</span></a>
+    <nav class="navlinks">
+      <a href="#products">Products</a>
+      <a href="#process">How It Works</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="btn" href="https://wa.me/923000000000">Order on WhatsApp</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="kicker">Custom 3D Printed Gifts — Pakistan</p>
+      <h1>Your name, printed into something <em>they keep forever.</em></h1>
+      <p class="lead">PikaCo designs and 3D prints personalized keychains, name plates and gift sets. Every piece is made fresh for your order — no molds, no copies, no compromises.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="https://wa.me/923000000000">Order Now — COD Available</a>
+        <a class="btn ghost" href="#products">Browse Products</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="tape"></span>
+      <div class="frame">
+        <div class="tile"><span>A</span></div>
+        <div class="cap">"Ayesha" — custom name keychain, first edition</div>
+      </div>
+      <div class="float-card"><b>Rs. 499</b><small>starting price, delivered</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="container">
+    <div><b>500+</b><small>orders delivered</small></div>
+    <div><b>2–3 days</b><small>nationwide delivery</small></div>
+    <div><b>COD</b><small>or JazzCash / EasyPaisa</small></div>
+    <div><b>100%</b><small>made to order</small></div>
+  </div>
+</div>
+
+<section id="products">
+  <div class="container">
+    <p class="sec-label">The Collection</p>
+    <h2 class="sec-title">Pick your design</h2>
+    <p class="sec-sub">Four signature products. Any name, any text, any color filament — your order, your way.</p>
+    <div class="grid4">
+      <div class="pcard"><div class="thumb">N</div><div class="body"><h3>Name Keychain</h3><p>Bubble, script or block letters in any name.</p><span class="price">Rs. 499</span></div></div>
+      <div class="pcard"><div class="thumb">K</div><div class="body"><h3>Bike Number Plate</h3><p>Your exact registration number, miniature size.</p><span class="price">Rs. 599</span></div></div>
+      <div class="pcard"><div class="thumb">S</div><div class="body"><h3>Couple Keychain Set</h3><p>Two matching halves of one heart.</p><span class="price">Rs. 899</span></div></div>
+      <div class="pcard"><div class="thumb">U</div><div class="body"><h3>Urdu Name Keychain</h3><p>Elegant Nastaliq script, gold option available.</p><span class="price">Rs. 549</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="process">
+  <div class="container">
+    <p class="sec-label">How It Works</p>
+    <h2 class="sec-title">From message to doorstep</h2>
+    <p class="sec-sub">Three steps, two days, zero hassle.</p>
+    <div class="grid3">
+      <div class="step"><div class="num">01</div><h3>Send your idea</h3><p>Message us on WhatsApp with the name, text or design you want. We confirm details within minutes.</p></div>
+      <div class="step"><div class="num">02</div><h3>We print and pack</h3><p>Your piece is printed fresh in strong PLA, quality checked by hand, and packed in protective wrap.</p></div>
+      <div class="step"><div class="num">03</div><h3>Delivered in 2–3 days</h3><p>Cash on delivery across Pakistan, or pay in advance via JazzCash and EasyPaisa. Your call.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <p class="sec-label">Why PikaCo</p>
+    <h2 class="sec-title">Small studio, high standards</h2>
+    <p class="sec-sub">We are a two-person studio that treats every keychain like a gift for family.</p>
+    <div class="why-grid">
+      <div class="why"><h3>Made fresh, never stored</h3><p>Nothing sits in a warehouse. Every item is printed after you order, in the color and font you choose.</p></div>
+      <div class="why"><h3>Verified payments only</h3><p>Pay cash at your doorstep, or advance through JazzCash and EasyPaisa. We confirm every payment manually before dispatch.</p></div>
+      <div class="why"><h3>Gift-ready packaging</h3><p>Each order ships in a clean box with protective wrap — ready to hand over as a present.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:20px">
+  <div class="container quote">
+    <p class="sec-label">Reviews</p>
+    <blockquote>“Ordered the couple set for our anniversary. The finishing was cleaner than anything I have seen in local markets, and it arrived in two days.”</blockquote>
+    <cite>— Hamza R., Lahore</cite>
+  </div>
+</section>
+
+<div class="band">
+  <h2>Ready to make yours?</h2>
+  <p>Tell us the name. We will handle the rest.</p>
+  <a class="btn white" href="https://wa.me/923000000000">Order on WhatsApp</a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="logo" href="#">PikaCo<span> studio</span></a>
+        <p>Custom 3D printed keychains and gifts, made to order in Pakistan.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#products">Name Keychain</a>
+        <a href="#products">Bike Number Plate</a>
+        <a href="#products">Couple Set</a>
+        <a href="#products">Urdu Name</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#process">How It Works</a>
+        <a href="#why">Why Us</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="https://wa.me/923000000000">WhatsApp: 0300-0000000</a>
+        <p>Payments: COD · JazzCash · EasyPaisa</p>
+      </div>
+    </div>
+    <div class="f-bottom">© 2026 PikaCo Studio. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
