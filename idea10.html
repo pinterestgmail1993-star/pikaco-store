@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea 10 — Pastel Bullet Journal | PikaCo</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Patrick Hand',cursive;background:#FBF3F7;color:#4A3540;min-height:100vh;padding:30px 16px 90px;background-image:radial-gradient(#E8BFD2 1.2px,transparent 1.2px);background-size:26px 26px}
+.spread{max-width:660px;margin:0 auto}
+.topwash{display:flex;gap:0;margin-bottom:-8px}
+.topwash span{height:26px;flex:1;opacity:.9;border-left:2px dashed rgba(255,255,255,.8);border-right:2px dashed rgba(255,255,255,.8)}
+h1{font-family:'Caveat',cursive;font-size:3.5rem;color:#D63384;line-height:1;margin:14px 0 0}
+h1 em{font-style:normal;position:relative;white-space:nowrap}
+h1 em::after{content:"";position:absolute;left:-2%;bottom:4px;width:104%;height:.42em;background:#F9BFDC;z-index:-1;border-radius:40% 55% 48% 52%/60% 40% 60% 40%;transform:rotate(-1deg)}
+.month{font-family:'Caveat',cursive;font-size:1.5rem;color:#9A6A80;letter-spacing:2px}
+.spreadcard{background:rgba(255,255,255,.9);border:1px solid #F2D3E1;border-radius:14px;box-shadow:0 8px 24px rgba(180,80,130,.12);padding:24px 24px 20px;margin:20px 0;position:relative;backdrop-filter:blur(2px)}
+.spreadcard:nth-child(even){transform:rotate(.4deg)}
+.spreadcard:nth-child(odd){transform:rotate(-.35deg)}
+.chipdate{display:inline-block;font-family:'Caveat',cursive;font-size:1.2rem;background:#F9BFDC;color:#8A3A62;border-radius:6px;padding:1px 12px;transform:rotate(-1.5deg);margin-bottom:6px}
+h2{font-family:'Caveat',cursive;font-size:2.1rem;color:#C43A77;line-height:1}
+.card-sub{font-size:.98rem;color:#8A6076;margin-top:2px}
+.track{margin-top:14px}
+.track-item{display:flex;align-items:flex-start;gap:12px;padding:10px 6px;border-bottom:1.5px dashed #EFC9DA;position:relative}
+.track-item:last-child{border-bottom:none}
+.box{width:22px;height:22px;border:2.5px solid #D63384;border-radius:6px;flex-shrink:0;margin-top:3px;position:relative}
+.box.tick::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#D63384;font-size:1.15rem;font-weight:700}
+.ti-body{flex:1}
+.ti-body h3{font-size:1.12rem;color:#4A3540;line-height:1.15}
+.ti-body p{font-size:.92rem;color:#8A6076;line-height:1.4}
+.ti-price{font-family:'Caveat',cursive;font-size:1.55rem;color:#D63384;white-space:nowrap;margin-top:2px;position:relative}
+.ti-price::before{content:"";position:absolute;inset:-4px -10px;border:2px solid #F2A0C6;border-radius:60% 40% 55% 45%/55% 60% 40% 45%;transform:rotate(-2deg)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.legend span{background:#FBE9F2;border-radius:999px;padding:6px 14px;font-size:.85rem;color:#A3547E}
+.cta-box{text-align:center;padding:6px 0 0}
+.cta{display:inline-block;background:#D63384;color:#fff;text-decoration:none;font-weight:700;font-size:1.12rem;padding:14px 36px;border-radius:12px;box-shadow:0 6px 0 #A82A68;transform:rotate(-.5deg);transition:transform .12s,box-shadow .12s}
+.cta:hover{transform:rotate(-.5deg) translateY(2px);box-shadow:0 3px 0 #A82A68}
+.note{font-family:'Caveat',cursive;font-size:1.35rem;color:#9A6A80;text-align:center;margin-top:14px}
+footer{text-align:center;font-family:'Caveat',cursive;color:#B78CA2;font-size:1.25rem;margin-top:26px}
+.themepick{position:fixed;bottom:0;left:0;right:0;background:#4A3540;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;font-size:.85rem;z-index:9}
+.themepick a{color:#4A3540;text-decoration:none;font-weight:700;background:#F9BFDC;padding:4px 12px;border-radius:6px}
+.themepick a.on{background:#D63384;color:#fff}
+</style>
+</head>
+<body>
+<div class="spread">
+  <div class="topwash">
+    <span style="background:repeating-linear-gradient(45deg,#F9BFDC 0 8px,#F7A9CC 8px 16px)"></span>
+    <span style="background:repeating-linear-gradient(45deg,#FFE1EE 0 8px,#FBC9E0 8px 16px)"></span>
+    <span style="background:repeating-linear-gradient(45deg,#F6D8E9 0 8px,#F0C3DC 8px 16px)"></span>
+  </div>
+  <p class="month">· october spread · week 43 ·</p>
+  <h1>PikaCo <em>bujo</em> 🎀</h1>
+  <div class="spreadcard">
+    <span class="chipdate">product tracker</span>
+    <h2>this month's keychain menu ✍️</h2>
+    <p class="card-sub">every design printed fresh to order — tick the one you want 😌</p>
+    <div class="track">
+      <div class="track-item">
+        <span class="box tick"></span>
+        <div class="ti-body"><h3>🔑 name keychain</h3><p>any name · any font · bestseller</p></div>
+        <span class="ti-price">Rs. 499</span>
+      </div>
+      <div class="track-item">
+        <span class="box tick"></span>
+        <div class="ti-body"><h3>🏍️ bike number plate</h3><p>your exact number, mini size</p></div>
+        <span class="ti-price">Rs. 599</span>
+      </div>
+      <div class="track-item">
+        <span class="box"></span>
+        <div class="ti-body"><h3>💞 couple half-heart set</h3><p>they keep one, you keep one</p></div>
+        <span class="ti-price">Rs. 899</span>
+      </div>
+      <div class="track-item">
+        <span class="box"></span>
+        <div class="ti-body"><h3>🇵🇰 urdu name keychain</h3><p>nastaliq script · gold option</p></div>
+        <span class="ti-price">Rs. 549</span>
+      </div>
+    </div>
+    <div class="legend">
+      <span>🚚 COD all pakistan</span>
+      <span>💳 jazzcash / easypaisa</span>
+      <span>📦 2–3 days</span>
+      <span>🎀 gift wrap free</span>
+    </div>
+  </div>
+  <div class="spreadcard">
+    <span class="chipdate">how it works</span>
+    <h2>order flow 📋</h2>
+    <div class="track">
+      <div class="track-item"><span class="box tick"></span><div class="ti-body"><h3>1 · whatsapp us</h3><p>your name + design idea (weird ideas welcome)</p></div></div>
+      <div class="track-item"><span class="box tick"></span><div class="ti-body"><h3>2 · confirm + pay</h3><p>COD on delivery, or advance via jazzcash/easypaisa</p></div></div>
+      <div class="track-item"><span class="box"></span><div class="ti-body"><h3>3 · we print + pack</h3><p>bubble wrapped, cute box, handwritten note</p></div></div>
+      <div class="track-item"><span class="box"></span><div class="ti-body"><h3>4 · doorstep in 2–3 days</h3><p>unbox · smile · attach to everything you own</p></div></div>
+    </div>
+    <div class="cta-box">
+      <a class="cta" href="https://wa.me/923000000000?text=Salam!%20Tick%20one%20for%20me%20%F0%9F%8E%80%20I%20want%20a%20custom%20keychain">tap to start ▸ whatsapp</a>
+      <p class="note">we reply fast — faster than you can draw a straight line 📏</p>
+    </div>
+  </div>
+  <footer>· planned, printed, loved · © PikaCo 🎀</footer>
+</div>
+<div class="themepick">💡 <b>Idea 10 — Pastel BuJo</b> · Compare:
+  <a href="idea6.html">6</a><a href="idea7.html">7</a><a href="idea8.html">8</a><a href="idea9.html">9</a><a class="on" href="idea10.html">10</a>
+</div>
+</body>
+</html>
