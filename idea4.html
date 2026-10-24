@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea 4 — Ripped Zine | PikaCo</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',sans-serif;background:#1E1E24;color:#2B2B33;min-height:100vh}
+.sheet{max-width:780px;margin:0 auto;background:#FBF7F0;position:relative;padding-bottom:0;overflow:hidden}
+/* ransom heading */
+.ransom{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:44px 16px 6px}
+.ransom span{display:inline-block;font-family:'Archivo Black',sans-serif;font-size:2.6rem;line-height:1;padding:8px 10px;color:#fff}
+.ransom .p1{background:#FF4FA3;transform:rotate(-4deg)}
+.ransom .p2{background:#2B2B33;transform:rotate(3deg)}
+.ransom .p3{background:#E93A7D;transform:rotate(-2deg);color:#FFE14D}
+.ransom .p4{background:#fff;color:#FF4FA3;border:3px solid #2B2B33;transform:rotate(2deg)}
+.sub{text-align:center;font-family:'Caveat',cursive;font-size:1.7rem;color:#B0306B;padding:8px 20px 0;transform:rotate(-1deg)}
+/* torn edges */
+.tear{height:22px;background:#1E1E24;clip-path:polygon(0 55%,4% 30%,9% 60%,14% 25%,20% 58%,26% 22%,32% 62%,38% 28%,44% 55%,50% 20%,56% 60%,62% 25%,68% 58%,74% 22%,80% 62%,86% 28%,92% 55%,97% 30%,100% 58%,100% 100%,0 100%)}
+.tear.flip{transform:rotate(180deg)}
+/* tape strips */
+.strip{position:absolute;background:repeating-linear-gradient(45deg,#FFD6EC,#FFD6EC 10px,#FFC2E0 10px,#FFC2E0 20px);opacity:.9;width:120px;height:30px;border-left:3px dashed rgba(255,255,255,.7);border-right:3px dashed rgba(255,255,255,.7);z-index:2}
+/* hero paper block */
+.paper{background:#FF4FA3;color:#fff;padding:34px 26px 40px;position:relative}
+.paper h2{font-family:'Archivo Black',sans-serif;font-size:1.9rem;line-height:1.15;text-transform:uppercase}
+.paper h2 mark{background:#FFE14D;color:#2B2B33;padding:0 8px;transform:rotate(-1deg);display:inline-block}
+.paper p{margin-top:14px;font-size:1.02rem;line-height:1.55;color:#FFE9F3}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{background:#fff;color:#B0306B;font-weight:700;font-size:.82rem;padding:8px 14px;border:2px solid #2B2B33;box-shadow:3px 3px 0 #2B2B33;transform:rotate(-1deg)}
+.badge:nth-child(2){transform:rotate(1.5deg)}.badge:nth-child(3){transform:rotate(-1deg)}
+/* products */
+.sec-title{font-family:'Archivo Black',sans-serif;font-size:1.5rem;text-transform:uppercase;padding:34px 22px 4px}
+.sec-title em{font-style:normal;color:#FF4FA3}
+.zine-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;padding:14px 22px 10px}
+.zcard{background:#fff;border:3px solid #2B2B33;box-shadow:5px 5px 0 #2B2B33;padding:14px;position:relative}
+.zcard:nth-child(odd){transform:rotate(-1.6deg)}.zcard:nth-child(even){transform:rotate(1.4deg)}
+.zcard .num{position:absolute;top:-14px;left:-10px;background:#FFE14D;border:2px solid #2B2B33;font-family:'Archivo Black',sans-serif;font-size:.8rem;padding:4px 9px;transform:rotate(-6deg)}
+.zcard .img{height:92px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;background:#FFE3F0;border:2px dashed #FF8FC7}
+.zcard h3{font-size:1rem;margin:10px 0 2px;text-transform:uppercase;letter-spacing:.5px}
+.zcard .price{font-family:'Caveat',cursive;font-size:1.5rem;color:#E93A7D;font-weight:700}
+.zcard .tagz{font-size:.72rem;color:#8A8078;display:block}
+/* sticker cta */
+.sticker-row{display:flex;justify-content:center;padding:36px 16px 10px}
+.sticker{position:relative;background:#E93A7D;color:#fff;text-decoration:none;font-family:'Archivo Black',sans-serif;font-size:1.5rem;text-transform:uppercase;padding:22px 40px;clip-path:polygon(10% 0,90% 4%,100% 38%,94% 72%,80% 100%,18% 96%,0 66%,4% 30%);box-shadow:0 8px 0 rgba(0,0,0,.2);transition:transform .15s}
+.sticker:hover{transform:rotate(-3deg) scale(1.06)}
+.sub2{text-align:center;font-family:'Caveat',cursive;font-size:1.4rem;color:#7A6E66;padding-bottom:8px}
+.foot{background:#2B2B33;color:#BDB4AC;text-align:center;font-size:.85rem;padding:22px 16px 26px}
+.foot b{color:#FF4FA3}
+.themepick{position:fixed;bottom:0;left:0;right:0;background:#141418;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;font-size:.85rem;z-index:9}
+.themepick a{color:#141418;text-decoration:none;font-weight:700;background:#FF4FA3;padding:4px 12px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <span class="strip" style="top:10px;left:8%;transform:rotate(-8deg)"></span>
+  <span class="strip" style="top:16px;right:6%;transform:rotate(10deg)"></span>
+  <div class="ransom">
+    <span class="p1">PIK</span><span class="p2">A</span><span class="p3">CO</span><span class="p4">✨</span>
+  </div>
+  <p class="sub">cut. printed. glued. yours. — custom 3D keychains, pakistan</p>
+  <div class="tear"></div>
+  <div class="paper">
+    <h2>your name, <mark>immortalized</mark> in plastic 🔥</h2>
+    <p>we 3D print keychains that look like nothing else in this country. any name. any font. your bike number, your crush's initials (we won't tell). designed fresh for every single order — no molds, no copies, no boring.</p>
+    <div class="badges">
+      <span class="badge">🚚 COD ALL PAKISTAN</span>
+      <span class="badge">💳 JAZZCASH / EASYPAISA</span>
+      <span class="badge">📦 2–3 DAYS</span>
+    </div>
+  </div>
+  <div class="tear flip"></div>
+  <h2 class="sec-title">the <em>catalog</em> (steal these)</h2>
+  <div class="zine-grid">
+    <div class="zcard"><span class="num">NO.1</span><div class="img">🔑</div><h3>Name Keychain</h3><span class="tagz">any font · any color</span><span class="price">Rs. 499</span></div>
+    <div class="zcard"><span class="num">NO.2</span><div class="img">🏍️</div><h3>Bike Plate</h3><span class="tagz">your exact number</span><span class="price">Rs. 599</span></div>
+    <div class="zcard"><span class="num">NO.3</span><div class="img">💞</div><h3>Couple Set</h3><span class="tagz">2 halves, 1 heart</span><span class="price">Rs. 899</span></div>
+    <div class="zcard"><span class="num">NO.4</span><div class="img">🇵🇰</div><h3>Urdu Script</h3><span class="tagz">nastaliq style</span><span class="price">Rs. 549</span></div>
+  </div>
+  <div class="sticker-row"><a class="sticker" href="https://wa.me/923000000000?text=Salam!%20Custom%20keychain%20chaheyiye%20%F0%9F%94%A5">ORDER NOW!!</a></div>
+  <p class="sub2">↖ tap it. you know you want to. (whatsapp opens, we reply fast)</p>
+  <div class="tear"></div>
+  <div class="foot">
+    <b>PIKACO</b> — zine issue #001 · printed in karachi · © 2026<br>
+    this page rips paper. responsibly.
+  </div>
+</div>
+<div class="themepick">💡 Preview <b>Idea 4 — Ripped Zine</b> &nbsp; Compare:
+  <a href="idea1.html">1</a><a href="idea2.html">2</a><a href="idea3.html">3</a><a href="idea4.html">4</a><a href="idea5.html">5</a>
+</div>
+</body>
+</html>
