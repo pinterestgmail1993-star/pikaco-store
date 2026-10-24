@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PikaCo — Custom 3D Printed Gifts, Delivered Across Pakistan</title>
+<meta name="description" content="Personalized name keychains, bike plates and couple sets. Printed to order, delivered in 2 to 3 days. COD, JazzCash and EasyPaisa accepted.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito Sans',sans-serif;background:#FFFDFD;color:#3A2A34;line-height:1.65}
+.container{max-width:1000px;margin:0 auto;padding:0 26px}
+/* HEADER */
+header{background:#fff;border-bottom:1px solid #F5E2EA;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:'Lora',serif;font-size:1.4rem;font-weight:700;color:#B0306B;text-decoration:none}
+.logo em{color:#3A2A34;font-weight:500}
+.navlinks{display:flex;gap:26px;align-items:center}
+.navlinks a{color:#7A5A6A;text-decoration:none;font-size:.9rem;font-weight:700}
+.navlinks a:hover{color:#B0306B}
+.btn{display:inline-block;background:#B0306B;color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;padding:12px 26px;border-radius:10px;transition:all .2s}
+.btn:hover{background:#8F2456}
+.btn.soft{background:#FCE7F1;color:#B0306B}
+.btn.soft:hover{background:#F8D3E4}
+@media(max-width:800px){.navlinks{display:none}}
+/* HERO — soft split */
+.hero{background:linear-gradient(180deg,#FFF7FA 0%,#FDEFF5 100%);border-bottom:1px solid #F5E2EA}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:76px 0}
+.chip{display:inline-block;background:#fff;border:1px solid #F0C9DC;color:#B0306B;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:7px 16px}
+h1{font-family:'Lora',serif;font-size:2.9rem;line-height:1.16;font-weight:700;color:#2E1E28;margin:20px 0 16px}
+h1 em{color:#B0306B;font-style:italic}
+.hero p.lead{color:#7A5A6A;font-size:1.05rem;margin-bottom:28px;max-width:460px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+/* HERO COLLAGE */
+.collage{position:relative;height:400px}
+.c-item{position:absolute;background:#fff;border:1px solid #F0C9DC;border-radius:14px;box-shadow:0 14px 34px rgba(176,48,107,.14);padding:14px}
+.c-item .sq{border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:#B0306B}
+.ci1{width:210px;top:8px;left:6%;transform:rotate(-3deg)}
+.ci1 .sq{height:150px;background:linear-gradient(135deg,#FBD9EA,#F2A9CC);font-size:3rem}
+.ci2{width:180px;top:120px;right:4%;transform:rotate(2.5deg)}
+.ci2 .sq{height:120px;background:linear-gradient(135deg,#F6E7F0,#E3BED6);font-size:2.4rem}
+.ci3{width:190px;bottom:6px;left:22%;transform:rotate(1.5deg)}
+.ci3 .sq{height:110px;background:linear-gradient(135deg,#FCE4EF,#EFB7D4);font-size:2.2rem}
+.c-item b{display:block;font-size:.9rem;color:#3A2A34;margin-top:10px;font-family:'Lora',serif}
+.c-item small{color:#A87E92;font-size:.75rem}
+.badge-float{position:absolute;top:-14px;right:14%;background:#B0306B;color:#fff;font-size:.78rem;font-weight:800;border-radius:999px;padding:8px 16px;transform:rotate(4deg);box-shadow:0 8px 18px rgba(176,48,107,.3)}
+@media(max-width:840px){.hero-grid{grid-template-columns:1fr}.collage{height:430px;max-width:420px}}
+/* MARQUEE-LIKE TRUST ROW */
+.trow{background:#fff;border-bottom:1px solid #F5E2EA}
+.trow .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:16px;padding-bottom:16px}
+.trow span{font-size:.85rem;font-weight:700;color:#9A6A82}
+.trow b{color:#B0306B}
+/* SECTIONS */
+section{padding:78px 0}
+.sh{text-align:center;max-width:560px;margin:0 auto 46px}
+.sh .kick{font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#B0306B}
+h2{font-family:'Lora',serif;font-size:2.15rem;font-weight:700;color:#2E1E28;margin:10px 0 10px}
+.sh p{color:#8A6478;font-size:.98rem}
+/* PRODUCTS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:22px}
+.p{background:#fff;border:1px solid #F5E2EA;border-radius:16px;padding:22px;transition:transform .22s,box-shadow .22s;position:relative}
+.p:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(176,48,107,.14)}
+.p .tagline2{position:absolute;top:-12px;left:18px;background:#3A2A34;color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.08em;border-radius:999px;padding:5px 12px;text-transform:uppercase}
+.p .art{height:120px;border-radius:11px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:2.5rem;font-weight:700;color:#B0306B}
+.p:nth-child(1) .art{background:linear-gradient(135deg,#FBD9EA,#F3ABCE)}
+.p:nth-child(2) .art{background:linear-gradient(135deg,#F7E9F1,#E4C0D8)}
+.p:nth-child(3) .art{background:linear-gradient(135deg,#FCE6F0,#F0BCD8)}
+.p:nth-child(4) .art{background:linear-gradient(135deg,#F9E3EE,#ECB2D2)}
+.p h3{font-family:'Lora',serif;font-size:1.15rem;color:#2E1E28}
+.p p{font-size:.86rem;color:#9A7284;margin:6px 0 12px}
+.p .price{font-weight:800;color:#B0306B;font-size:1.02rem}
+/* STORY STRIP */
+.story{background:#FCE7F1;border-radius:22px;padding:54px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.story h2{margin:0 0 12px}
+.story p{color:#7A4A62;font-size:.98rem}
+.story .num{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.story .n b{font-family:'Lora',serif;font-size:2rem;color:#B0306B;display:block}
+.story .n small{color:#9A6A82;font-size:.82rem}
+@media(max-width:720px){.story{grid-template-columns:1fr}}
+/* REVIEWS */
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.r{background:#fff;border:1px solid #F5E2EA;border-radius:16px;padding:26px}
+.r .stars{color:#D63384;letter-spacing:3px;font-size:.85rem}
+.r p{font-size:.92rem;color:#5C4452;margin:10px 0 12px;font-style:italic;font-family:'Lora',serif}
+.r cite{font-style:normal;font-size:.8rem;font-weight:800;color:#B0306B}
+/* FAQ */
+details{background:#fff;border:1px solid #F5E2EA;border-radius:12px;padding:18px 22px;margin-bottom:12px;max-width:680px;margin-left:auto;margin-right:auto}
+details summary{font-weight:800;color:#3A2A34;cursor:pointer;font-size:.95rem}
+details p{margin-top:10px;color:#8A6478;font-size:.9rem}
+/* CTA */
+.cta{background:#B0306B;text-align:center;color:#fff;border-radius:22px;margin:0 26px;padding:58px 30px}
+.cta h2{color:#fff}
+.cta p{color:#F2C6DC;margin-bottom:26px}
+.btn.w{background:#fff;color:#B0306B}
+.btn.w:hover{background:#FCE7F1}
+/* FOOTER */
+footer{background:#2E1E28;color:#B48CA0;margin-top:80px}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding:56px 0 42px}
+.f-grid h4{color:#fff;font-family:'Lora',serif;font-size:1rem;margin-bottom:14px}
+.f-grid a,.f-grid p{display:block;color:#B48CA0;font-size:.86rem;text-decoration:none;line-height:2.1}
+.f-grid a:hover{color:#F4A7C8}
+.f-logo{font-family:'Lora',serif;font-size:1.4rem;color:#F4A7C8;margin-bottom:10px;font-weight:700}
+.f-bottom{border-top:1px solid #46303C;padding:18px 0;text-align:center;font-size:.78rem;color:#8A6478}
+@media(max-width:760px){.f-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">PikaCo<em> gifts</em></a>
+    <nav class="navlinks">
+      <a href="#shop">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="https://wa.me/923000000000">Order Now</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="chip">Made to order — Karachi, Pakistan</span>
+      <h1>Gifts with their <em>name on it,</em> printed just for them.</h1>
+      <p class="lead">PikaCo turns names, numbers and little inside jokes into 3D printed keychains people actually keep. Designed with you, printed fresh, delivered in days.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="https://wa.me/923000000000">Order on WhatsApp</a>
+        <a class="btn soft" href="#shop">Browse the Shop</a>
+      </div>
+    </div>
+    <div class="collage">
+      <span class="badge-float">COD Nationwide</span>
+      <div class="c-item ci1"><div class="sq">A</div><b>Custom Name Keychain</b><small>Rs. 499 — any font, any color</small></div>
+      <div class="c-item ci2"><div class="sq">2907</div><b>Bike Number Plate</b><small>Rs. 599 — your exact digits</small></div>
+      <div class="c-item ci3"><div class="sq">S+A</div><b>Couple Keychain Set</b><small>Rs. 899 — two halves, one heart</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="trow">
+  <div class="container">
+    <span><b>500+</b> orders delivered</span>
+    <span><b>2–3 day</b> delivery</span>
+    <span><b>COD</b> everywhere in Pakistan</span>
+    <span><b>JazzCash</b> and EasyPaisa accepted</span>
+  </div>
+</div>
+
+<section id="shop">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">The Shop</p>
+      <h2>Four designs, endless names</h2>
+      <p>Everything is printed after you order — pick a design, tell us the text, done.</p>
+    </div>
+    <div class="grid">
+      <div class="p"><span class="tagline2">Bestseller</span><div class="art">A</div><h3>Name Keychain</h3><p>Bubble, script or block letters in any name.</p><span class="price">Rs. 499</span></div>
+      <div class="p"><div class="art">2907</div><h3>Bike Number Plate</h3><p>Your exact registration number, mini and strong.</p><span class="price">Rs. 599</span></div>
+      <div class="p"><span class="tagline2">Gift pick</span><div class="art">S+A</div><h3>Couple Keychain Set</h3><p>Two matching halves of one heart, boxed together.</p><span class="price">Rs. 899</span></div>
+      <div class="p"><div class="art">عائشہ</div><h3>Urdu Name Keychain</h3><p>Beautiful Nastaliq script, gold filament option.</p><span class="price">Rs. 549</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="story" style="padding-top:20px">
+  <div class="container">
+    <div class="story">
+      <div>
+        <p class="kick" style="font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#B0306B">Our Story</p>
+        <h2>A two-person studio that sweats the details</h2>
+        <p>We started PikaCo with one printer and a simple belief: personalized gifts should feel personal, not mass-produced. Every order gets a design preview before printing, a hand inspection after, and packaging nice enough to gift directly.</p>
+      </div>
+      <div class="num">
+        <div class="n"><b>500+</b><small>orders printed and delivered</small></div>
+        <div class="n"><b>2–3</b><small>days from message to doorstep</small></div>
+        <div class="n"><b>2x</b><small>quality check on every piece</small></div>
+        <div class="n"><b>0</b><small>stocked items — everything is fresh</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">Reviews</p>
+      <h2>People keep coming back</h2>
+      <p>Most of our orders now come from repeat customers and their friends.</p>
+    </div>
+    <div class="rgrid">
+      <div class="r"><div class="stars">★★★★★</div><p>“The Urdu name keychain was a gift for my mother. She almost cried. The script was so clean.”</p><cite>— Sana, Karachi</cite></div>
+      <div class="r"><div class="stars">★★★★★</div><p>“Ordered Monday night, got it Wednesday afternoon. The bike plate looks factory-made.”</p><cite>— Umar, Rawalpindi</cite></div>
+      <div class="r"><div class="stars">★★★★★</div><p>“Third order this year. The couple sets are my default engagement gift now.”</p><cite>— Areeba, Faisalabad</cite></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:10px">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">FAQ</p>
+      <h2>Quick answers</h2>
+    </div>
+    <details open><summary>How do I place an order?</summary><p>Message us on WhatsApp with the design you want. We confirm the details, send a preview, and start printing after your approval.</p></details>
+    <details><summary>How do I pay?</summary><p>Cash on delivery anywhere in Pakistan. If you prefer, pay in advance via JazzCash or EasyPaisa — we verify every transfer in our own app before dispatch.</p></details>
+    <details><summary>How long does delivery take?</summary><p>Usually 2 to 3 days after design approval, via courier. You receive a tracking number as soon as it ships.</p></details>
+    <details><summary>Can I request custom designs beyond the four products?</summary><p>Yes. Send us your idea — logos, dates, quotes, shapes. Custom work starts from Rs. 699 depending on size.</p></details>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Order yours today</h2>
+  <p>Tell us the name. We will make it real.</p>
+  <a class="btn w" href="https://wa.me/923000000000">Message on WhatsApp</a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <div class="f-logo">PikaCo gifts</div>
+        <p style="max-width:250px">Custom 3D printed keychains and personalized gifts, made to order in Pakistan.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#shop">Name Keychain</a>
+        <a href="#shop">Bike Number Plate</a>
+        <a href="#shop">Couple Set</a>
+        <a href="#shop">Urdu Name</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="https://wa.me/923000000000">WhatsApp: 0300-0000000</a>
+        <p>COD · JazzCash · EasyPaisa</p>
+      </div>
+    </div>
+    <div class="f-bottom">© 2026 PikaCo Gifts. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
