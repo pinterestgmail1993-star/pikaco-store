@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea 6 — Dear Diary Classic | PikaCo</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Patrick Hand',cursive;background:#F3D9E5;color:#4A2B3A;min-height:100vh;padding:26px 12px 90px}
+.book{max-width:680px;margin:0 auto;background:repeating-linear-gradient(#FFFEFA,#FFFEFA 36px,#F6D3E3 36px,#F6D3E3 38px);border-radius:6px;box-shadow:0 14px 40px rgba(120,40,80,.28),inset 0 0 60px rgba(246,180,210,.18);position:relative;padding:38px 30px 46px 66px;overflow:hidden}
+.book::before{content:"";position:absolute;top:0;bottom:0;left:48px;width:2px;background:#EE9DBF;opacity:.55}
+.lock{position:absolute;top:18px;right:24px;font-size:1.6rem;transform:rotate(8deg)}
+.headdate{font-family:'Caveat',cursive;font-size:1.35rem;color:#B4638A;letter-spacing:1px}
+h1{font-family:'Caveat',cursive;font-size:4rem;color:#E0448C;line-height:.95;margin:4px 0 2px}
+.sub{color:#7A4A60;font-size:1.12rem;max-width:420px}
+.weather{text-align:right;font-family:'Caveat',cursive;font-size:1.3rem;color:#B4638A;margin:-8px 0 10px}
+.entry{background:rgba(255,255,255,.92);border:1px solid #F2C6DB;border-radius:8px;padding:18px 20px 14px;margin:26px 0;position:relative;box-shadow:0 4px 12px rgba(150,60,100,.12)}
+.entry:nth-child(odd){transform:rotate(-.8deg)}
+.entry:nth-child(even){transform:rotate(.7deg)}
+.tape{position:absolute;top:-13px;left:22px;width:104px;height:26px;background:linear-gradient(90deg,#F9BFDC,#F49CC6);opacity:.85;transform:rotate(-5deg);border-left:2px dashed rgba(255,255,255,.8);border-right:2px dashed rgba(255,255,255,.8)}
+.tape.alt{left:auto;right:22px;transform:rotate(4deg);background:linear-gradient(90deg,#FFE1EE,#FBC0DA)}
+.datechip{display:inline-block;font-family:'Caveat',cursive;font-size:1.25rem;color:#fff;background:#E879AB;border-radius:999px;padding:2px 16px;transform:rotate(-2deg);margin-bottom:6px}
+.entry h3{font-family:'Caveat',cursive;font-size:1.9rem;color:#C43A77;line-height:1.1}
+.entry p{font-size:1.05rem;line-height:1.55;color:#5C374C}
+.price{font-family:'Caveat',cursive;font-size:1.6rem;color:#E0448C;position:absolute;bottom:10px;right:18px}
+.mini{font-size:.85rem;color:#9A6A80;display:block}
+.ps{font-family:'Caveat',cursive;font-size:1.45rem;color:#B4638A;margin:26px 4px 0;transform:rotate(-.6deg)}
+.orderline{background:#FFF0F7;border:2px dashed #E58BB4;border-radius:10px;padding:16px 18px;margin:20px 0;transform:rotate(-.4deg)}
+.orderline p{font-size:1.05rem;margin:3px 0}
+.cta{display:inline-block;background:#E0448C;color:#fff;text-decoration:none;font-weight:700;font-size:1.15rem;padding:13px 32px;border-radius:999px;margin-top:10px;box-shadow:0 4px 12px rgba(224,68,140,.35)}
+footer{text-align:center;font-family:'Caveat',cursive;color:#A56384;font-size:1.35rem;margin-top:30px}
+.themepick{position:fixed;bottom:0;left:0;right:0;background:#4A2B3A;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;font-size:.85rem;z-index:9}
+.themepick a{color:#4A2B3A;text-decoration:none;font-weight:700;background:#F9BFDC;padding:4px 12px;border-radius:999px}
+.themepick a.on{background:#E0448C;color:#fff}
+</style>
+</head>
+<body>
+<div class="book">
+  <span class="lock">🔒</span>
+  <p class="headdate">entry no. 001 — friday, 24 october</p>
+  <h1>Dear Diary 💗</h1>
+  <p class="sub">today i decided to write down all the keychains i make, so nobody forgets how cute they are. ps: they sell out fast.</p>
+  <p class="weather">karachi · sunny with 100% chance of glitter ☀️✨</p>
+  <div class="entry"><span class="tape"></span>
+    <span class="datechip">bestseller</span>
+    <h3>🔑 the name keychain</h3>
+    <p>a girl ordered "Ayesha" in bubble letters today. she said it looked better than the ones in the mall. any name, any font — i print it fresh just for you.</p>
+    <span class="price">Rs. 499</span>
+  </div>
+  <div class="entry"><span class="tape alt"></span>
+    <span class="datechip">for the boys</span>
+    <h3>🏍️ bike number plate</h3>
+    <p>your exact number plate — KHI-2907 or whatever your heart rides on — printed mini and strong. brothers keep asking for these now.</p>
+    <span class="price">Rs. 599</span>
+  </div>
+  <div class="entry"><span class="tape"></span>
+    <span class="datechip">couples only 💞</span>
+    <h3>the half-heart set</h3>
+    <p>two keychains. two halves. one heart. our most gifted item — honestly some people cried. anniversaries, birthdays, "i'm sorry" gifts... it works.</p>
+    <span class="price">Rs. 899</span>
+  </div>
+  <div class="entry"><span class="tape alt"></span>
+    <span class="datechip">desi elegance</span>
+    <h3>🇵🇰 urdu name keychain</h3>
+    <p>your name in beautiful nastaliq script. nani-approved. looks stunning in gold too. write your name in urdu when you order!</p>
+    <span class="price">Rs. 549</span>
+  </div>
+  <p class="ps">p.s. — COD all over pakistan, or pay advance on JazzCash / EasyPaisa. delivery 2–3 din, bubble wrapped with pyaar 💌</p>
+  <div class="orderline">
+    <p>💌 <b>want one written about you?</b> message me your name + design idea:</p>
+    <a class="cta" href="https://wa.me/923000000000?text=Dear%20diary...%20I%20want%20a%20custom%20keychain%20%F0%9F%92%97">whatsapp me 💬</a>
+  </div>
+  <footer>~ the end ~ © PikaCo 💗</footer>
+</div>
+<div class="themepick">💡 <b>Idea 6 — Dear Diary Classic</b> · Compare:
+  <a class="on" href="idea6.html">6</a><a href="idea7.html">7</a><a href="idea8.html">8</a><a href="idea9.html">9</a><a href="idea10.html">10</a>
+</div>
+</body>
+</html>
