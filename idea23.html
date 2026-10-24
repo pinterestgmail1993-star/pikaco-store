@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pika &amp; Co — Preview 23 · Peach Blush</title>
+<meta name="description" content="Pika & Co — custom 3D printed keychains, car cuties, desk besties and gift boxes. COD across Pakistan.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Karla',sans-serif;background:#FFF6F3;color:#46322B;line-height:1.65;padding-bottom:58px}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+/* HEADER */
+header{background:#fff;border-bottom:1px solid #F5E3DA;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:800;color:#3A2A24;text-decoration:none;white-space:nowrap}
+.logo b{color:#F08A5D;font-weight:800}
+.navlinks{display:flex;gap:22px}
+.navlinks a{color:#8A7369;text-decoration:none;font-size:.86rem;font-weight:600;white-space:nowrap}
+.navlinks a:hover{color:#F08A5D}
+.btn{display:inline-block;background:#F08A5D;color:#fff;text-decoration:none;font-weight:700;font-size:.88rem;padding:11px 24px;border-radius:8px;transition:background .2s}
+.btn:hover{background:#DE7448}
+.btn.dark{background:#3A2A24}
+.btn.dark:hover{background:#57423A}
+.btn.ghost{background:#fff;color:#3A2A24;border:1.5px solid #EFDCD2}
+.btn.ghost:hover{border-color:#F08A5D;color:#DE7448}
+@media(max-width:900px){.navlinks{display:none}}
+/* HERO — mirrored split */
+.hero{background:linear-gradient(180deg,#FFF6F3,#FDEEE9);border-bottom:1px solid #F5E3DA}
+.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center;padding:80px 0}
+.kicker{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#DE7448;margin-bottom:16px}
+h1{font-size:2.9rem;line-height:1.16;font-weight:800;color:#3A2A24}
+h1 em{font-style:italic;color:#E88BA4}
+.hero p.lead{margin:20px 0 30px;color:#8A7369;font-size:1.05rem;max-width:470px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.stack{position:relative;height:390px}
+.frame{position:absolute;background:#fff;border:1px solid #F5E3DA;border-radius:10px;padding:12px;box-shadow:0 16px 40px rgba(70,50,43,.11)}
+.frame .tile{border-radius:7px;background:#fff;border:1px solid #F8ECE4;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:#F08A5D;overflow:hidden}
+.frame .tile img{width:100%;height:100%;object-fit:contain}
+.f1{width:225px;top:0;left:6%;transform:rotate(2.5deg)}
+.f1 .tile{height:160px;font-size:3rem}
+.f2{width:190px;top:118px;right:0;transform:rotate(-2deg)}
+.f2 .tile{height:118px;font-size:2.2rem}
+.f3{width:200px;bottom:0;left:20%;transform:rotate(1deg)}
+.f3 .tile{height:108px;font-size:1.7rem}
+.frame b{display:block;font-size:.83rem;color:#3A2A24;margin-top:10px}
+.frame small{color:#BCA69A;font-size:.73rem}
+.badge2{position:absolute;top:-14px;left:2%;background:#F2A7B8;color:#3A2A24;font-size:.72rem;font-weight:700;padding:8px 16px;border-radius:6px;transform:rotate(-3deg);letter-spacing:.06em}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.stack{max-width:400px}}
+/* STATS */
+.stats{background:#3A2A24;color:#fff}
+.stats .container{display:grid;grid-template-columns:repeat(4,1fr);padding-top:28px;padding-bottom:28px;text-align:center}
+.stats b{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;color:#F8C0CE}
+.stats small{color:#C8B4AB;font-size:.8rem}
+@media(max-width:640px){.stats .container{grid-template-columns:1fr 1fr;gap:18px}}
+/* SECTIONS */
+section{padding:78px 0}
+.sh{margin-bottom:40px}
+.kick{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#DE7448}
+h2.st{font-size:2.15rem;font-weight:700;margin:10px 0 8px;color:#3A2A24}
+.sh p{color:#8A7369;max-width:500px}
+.zig{display:flex;gap:38px;align-items:center;padding:34px 0;border-bottom:1px solid #F5E3DA}
+.zig:last-child{border-bottom:none}
+.zig:nth-child(even){flex-direction:row-reverse}
+.zthumb{width:170px;height:170px;flex-shrink:0;border-radius:50%;background:#fff;border:1px solid #F5E3DA;box-shadow:0 8px 22px rgba(70,50,43,.08);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:#F08A5D;padding:16px;overflow:hidden}
+.zthumb img{width:100%;height:100%;object-fit:contain}
+.zig h3{font-size:1.35rem;font-weight:700;color:#3A2A24;margin-bottom:6px}
+.zig p{font-size:.95rem;color:#8A7369;max-width:440px;margin-bottom:12px}
+.price{font-family:'Playfair Display',serif;font-size:1.25rem;color:#DE7448;font-weight:700;display:block;margin-bottom:14px}
+.tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C2557E;background:#FCE3EA;border:1px solid #F2C3D2;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+@media(max-width:680px){.zig,.zig:nth-child(even){flex-direction:column;align-items:flex-start;gap:20px}}
+/* PILLS — sticker rows */
+.pill{display:flex;gap:24px;align-items:center;background:#fff;border:1px solid #F5E3DA;border-radius:999px;padding:18px 30px 18px 18px;margin-bottom:18px;box-shadow:0 8px 20px rgba(70,50,43,.06);flex-wrap:wrap}
+.pill .pthumb{width:86px;height:86px;flex-shrink:0;border-radius:50%;background:#FFF6F3;border:1px solid #F5E3DA;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:#F08A5D;font-size:1.5rem}
+.pill h3{font-size:1.12rem;color:#3A2A24;margin-bottom:2px}
+.pill p{font-size:.86rem;color:#8A7369;max-width:420px}
+.pill .price{margin:0 0 0 auto;display:inline;color:#DE7448}
+.pill .btn{margin-left:18px}
+@media(max-width:640px){.pill{border-radius:24px;padding:20px}.pill .price{margin:8px 0 0}.pill .btn{margin-left:0}}
+/* PROCESS */
+.process{background:#fff;border-top:1px solid #F5E3DA;border-bottom:1px solid #F5E3DA}
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+.mini{background:#FFF6F3;border:1px solid #F5E3DA;border-radius:12px;padding:24px}
+.mini .num{font-family:'Playfair Display',serif;font-size:1.05rem;color:#F08A5D;font-weight:700;margin-bottom:8px}
+.mini h3{font-size:1rem;margin-bottom:6px;color:#3A2A24}
+.mini p{font-size:.85rem;color:#8A7369}
+/* QUOTE */
+.quote{max-width:640px;margin:0 auto;text-align:center}
+.quote blockquote{font-family:'Playfair Display',serif;font-size:1.3rem;font-style:italic;line-height:1.6;color:#3A2A24}
+.quote cite{display:block;margin-top:18px;font-style:normal;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#DE7448}
+/* CTA */
+.band{background:#F08A5D;text-align:center;color:#fff;padding:66px 24px}
+.band h2{font-size:2.05rem;font-weight:700;margin-bottom:12px;color:#fff}
+.band p{color:#FFE3D5;margin-bottom:28px}
+.btn.white{background:#fff;color:#3A2A24}
+.btn.white:hover{background:#FDEEE9}
+/* FOOTER */
+footer{background:#3A2A24;color:#C8B4AB;padding:56px 0 0}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding-bottom:42px}
+.f-grid h4{color:#fff;font-size:.95rem;margin-bottom:14px;font-weight:600}
+.f-grid a,.f-grid p{display:block;color:#C8B4AB;font-size:.85rem;text-decoration:none;line-height:2.1}
+.f-grid a:hover{color:#F8C0CE}
+.f-bottom{border-top:1px solid #57423A;text-align:center;padding:18px 0;font-size:.78rem;color:#9A857A}
+@media(max-width:760px){.f-grid{grid-template-columns:1fr 1fr}}
+/* SWITCHER */
+.switcher{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #F5E3DA;text-align:center;padding:10px 8px;font-size:.76rem;z-index:60}
+.switcher a{color:#8A7369;text-decoration:none;margin:0 7px;font-weight:600}
+.switcher a.on{color:#DE7448}
+.switcher span{color:#EFDCD2;margin:0 6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">Pika &amp; <b>Co</b></a>
+    <nav class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#rides">Vehicle &amp; Rides</a>
+      <a href="#gifts">Personalized Gifts</a>
+      <a href="#desk">Home &amp; Desk</a>
+      <a href="#kits">Kits &amp; Boxes</a>
+    </nav>
+    <a class="btn" href="https://wa.me/923000000000">Order on WhatsApp</a>
+  </div>
+</header>
+
+<div class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="stack">
+      <span class="badge2">COD Nationwide</span>
+      <div class="frame f1"><div class="tile"><img src="images/cat-phone-stand.png" alt="Sleepy Ginger Cat Phone Stand"></div><b>Sleepy Cat Phone Stand</b><small>Rs. 799 — new drop</small></div>
+      <div class="frame f2"><div class="tile">A</div><b>Custom Name Keychain</b><small>Rs. 499 — any font</small></div>
+      <div class="frame f3"><div class="tile">2907</div><b>Bike Number Plate</b><small>Rs. 599 — exact digits</small></div>
+    </div>
+    <div>
+      <p class="kicker">Custom 3D Printed Cuties — Pakistan</p>
+      <h1>Soft, sassy and printed <em>just for you.</em></h1>
+      <p class="lead">Pika &amp; Co makes personalized keychains, ride accessories, desk besties and gift boxes with your name all over them. Approve the design, we print it fresh, it reaches you in 2 to 3 days. COD, always an option.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#gifts">Shop the Cuties</a>
+        <a class="btn ghost" href="https://wa.me/923000000000">Order on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="container">
+    <div><b>500+</b><small>cuties shipped</small></div>
+    <div><b>2–3 days</b><small>to your door</small></div>
+    <div><b>2x</b><small>quality checks</small></div>
+    <div><b>0</b><small>boring gifts</small></div>
+  </div>
+</div>
+
+<section id="rides">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">For Your Ride</p>
+      <h2 class="st">Vehicle &amp; Rides</h2>
+      <p>Because the bike or car came first, but the accessories? The accessories complete the personality.</p>
+    </div>
+    <div class="zig">
+      <div class="zthumb">2907</div>
+      <div><h3>Bike Number Plate Keychain</h3><p>Your exact registration number in mini. A tiny trophy for a ride you would defend with your life.</p><span class="price">Rs. 599</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+    <div class="zig">
+      <div class="zthumb">BFF</div>
+      <div><h3>Car Dashboard Buddy</h3><p>A little co-pilot who never touches the AUX cord. Custom shapes and colors for your dashboard era.</p><span class="price">Rs. 649</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="gifts" style="background:#fff;border-top:1px solid #F5E3DA;border-bottom:1px solid #F5E3DA">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">Gifts That Hit Different</p>
+      <h2 class="st">Personalized Gifts</h2>
+      <p>Names, numbers and inside jokes turned into things they will actually keep forever.</p>
+    </div>
+    <div class="zig">
+      <div class="zthumb">A</div>
+      <div><span class="tag">Bestseller</span><h3>Custom Name Keychain</h3><p>Bubble, script or block lettering in any color. The piece that started it all, still our number one.</p><span class="price">Rs. 499</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+    <div class="zig">
+      <div class="zthumb">S+A</div>
+      <div><h3>Couple Keychain Set</h3><p>Two interlocking halves of one heart in a single gift box. Soft launch or hard launch, it works for both.</p><span class="price">Rs. 899</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+    <div class="zig">
+      <div class="zthumb" style="font-size:1.9rem">عائشہ</div>
+      <div><h3>Urdu Name Keychain</h3><p>Nastaliq script with optional gold filament. Understated, elegant, always lands well with the aunties.</p><span class="price">Rs. 549</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="desk">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">Desk Glow Up</p>
+      <h2 class="st">Home &amp; Desk</h2>
+      <p>Your desk called. It wants a personality upgrade and honestly, same.</p>
+    </div>
+    <div class="zig">
+      <div class="zthumb"><img src="images/cat-phone-stand.png" alt="Sleepy Ginger Cat Phone Stand"></div>
+      <div><span class="tag">New</span><h3>Sleepy Cat Phone Stand</h3><p>The chillest boy in the studio holds your phone at the perfect angle while you pretend to study. Sturdy, adorable, low maintenance.</p><span class="price">Rs. 799</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+    <div class="zig">
+      <div class="zthumb">H</div>
+      <div><h3>Heart Photo Holder</h3><p>Your favorite person's photo, standing pretty on your desk inside a tiny heart. Way cuter than a boring frame.</p><span class="price">Rs. 699</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+    <div class="zig">
+      <div class="zthumb" style="font-size:1.6rem">Noor</div>
+      <div><h3>Mini Name Sign</h3><p>Your name in 3D, standing tall on a shelf. Choose a color that matches the room's whole aesthetic.</p><span class="price">Rs. 899</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="kits" style="background:#fff;border-top:1px solid #F5E3DA;border-bottom:1px solid #F5E3DA">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">The Full Unboxing Moment</p>
+      <h2 class="st">Kits &amp; Boxes</h2>
+      <p>Curated bundles for birthdays, anniversaries and "I saw this and thought of you" season.</p>
+    </div>
+    <div class="zig">
+      <div class="zthumb">BOX</div>
+      <div><h3>Starter Gift Box</h3><p>Name keychain, sticker pack and a mini card in one pastel box. Fastest way to become someone's favorite person.</p><span class="price">Rs. 1,299</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+    <div class="zig">
+      <div class="zthumb">US</div>
+      <div><h3>Couple Gift Box</h3><p>Interlocking couple keychains plus a matching sticker sheet, boxed together. Anniversaries, sorted.</p><span class="price">Rs. 1,499</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="diaries">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">Write It Down, Bestie</p>
+      <h2 class="st">Diaries &amp; Stationery</h2>
+      <p>Journals and pens so cute your "new year new me" era might actually survive February.</p>
+    </div>
+    <div class="zig">
+      <div class="zthumb">A5</div>
+      <div><h3>A5 Hardcover Diary</h3><p>Smooth pages, sturdy cover, shades that match your vibe. For manifests, rants and plans you will actually follow.</p><span class="price">Rs. 899</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+    <div class="zig">
+      <div class="zthumb" style="font-size:1.7rem">6x</div>
+      <div><h3>Gel Pen Set — 6 Pastels</h3><p>Six pastel gel pens that glide like gossip. Fair warning: they will get stolen, so order two sets.</p><span class="price">Rs. 349</span><a class="btn dark" style="padding:9px 20px;font-size:.82rem" href="https://wa.me/923000000000">Order This</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="stickers" style="background:#fff;border-top:1px solid #F5E3DA;border-bottom:1px solid #F5E3DA">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">Decorate Everything</p>
+      <h2 class="st">Stickers, Obviously</h2>
+      <p>Waterproof, scratch-resistant and dangerously cute. Laptops, bottles, university files — nothing is safe.</p>
+    </div>
+    <div class="pill">
+      <div class="pthumb">10x</div>
+      <div><h3>Waterproof Sticker Pack — 10</h3><p>Ten of our cutest designs, laminated to survive rain, spills and gym-bag chaos.</p></div>
+      <span class="price">Rs. 249</span>
+      <a class="btn dark" style="padding:8px 18px;font-size:.8rem" href="https://wa.me/923000000000">Order This</a>
+    </div>
+    <div class="pill">
+      <div class="pthumb" style="font-size:1rem">NAME</div>
+      <div><h3>Custom Name Sticker Sheet</h3><p>Your name as a full sticker sheet in your font and color. Put it on everything you own.</p></div>
+      <span class="price">Rs. 349</span>
+      <a class="btn dark" style="padding:8px 18px;font-size:.8rem" href="https://wa.me/923000000000">Order This</a>
+    </div>
+    <div class="pill">
+      <div class="pthumb">S+M</div>
+      <div><h3>Matching Couple Stickers</h3><p>Two matching sheets for you and your favorite person. Impossibly cute, zero regrets.</p></div>
+      <span class="price">Rs. 399</span>
+      <a class="btn dark" style="padding:8px 18px;font-size:.8rem" href="https://wa.me/923000000000">Order This</a>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="sh">
+      <p class="kick">The Process</p>
+      <h2 class="st">Easy, verified, fast</h2>
+    </div>
+    <div class="mini-grid">
+      <div class="mini"><div class="num">01</div><h3>Slide into WhatsApp</h3><p>Send your name, number or idea. Average reply in under 10 minutes.</p></div>
+      <div class="mini"><div class="num">02</div><h3>Approve the preview</h3><p>We send a design mock first. Nothing prints until you say yes.</p></div>
+      <div class="mini"><div class="num">03</div><h3>Printed + double-checked</h3><p>Fresh print, inspected twice. Flawed pieces never leave the studio.</p></div>
+      <div class="mini"><div class="num">04</div><h3>Delivered in 2–3 days</h3><p>COD nationwide, or pay ahead with JazzCash and EasyPaisa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container quote">
+    <p class="kick" style="text-align:center;margin-bottom:14px">Reviews</p>
+    <blockquote>&ldquo;The Urdu keychain for my ammi made her tear up. The quality is so clean and it arrived in two days.&rdquo;</blockquote>
+    <cite>— Fatima R. — Karachi</cite>
+  </div>
+</section>
+
+<div class="band">
+  <h2>Ready for your cutest order yet?</h2>
+  <p>One WhatsApp text away. Average reply under 10 minutes.</p>
+  <a class="btn white" href="https://wa.me/923000000000">Order on WhatsApp</a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="#home" style="color:#fff">Pika &amp; <b style="color:#F8C0CE">Co</b></a>
+        <p style="margin-top:10px;max-width:260px">Custom 3D printed cuties — keychains, car accessories, desk besties and gift boxes, made to order in Pakistan.</p>
+      </div>
+      <div><h4>Shop</h4><a href="#rides">Vehicle &amp; Rides</a><a href="#gifts">Personalized Gifts</a><a href="#desk">Home &amp; Desk</a><a href="#kits">Kits &amp; Boxes</a><a href="#diaries">Diaries &amp; Stationery</a><a href="#stickers">Stickers</a></div>
+      <div><h4>Studio</h4><a href="#process">Process</a><a href="#reviews">Reviews</a><a href="https://wa.me/923000000000">WhatsApp Us</a></div>
+      <div><h4>Payments</h4><p>Cash on Delivery</p><p>JazzCash</p><p>EasyPaisa</p></div>
+    </div>
+    <div class="f-bottom">© 2026 Pika &amp; Co — All rights reserved</div>
+  </div>
+</footer>
+
+<div class="switcher">
+  <a href="idea16.html">16</a><a href="idea17.html">17</a><a href="idea18.html">18</a><a href="idea19.html">19</a><a href="idea20.html">20</a><span>|</span><a href="idea21.html">21</a><a href="idea22.html">22</a><a class="on" href="idea23.html">23</a><a href="idea24.html">24</a><a href="idea25.html">25</a><span>|</span><a href="index.html">Home</a>
+</div>
+</body>
+</html>
