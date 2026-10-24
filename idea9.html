@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea 9 — Kraft Scrapbook Album | PikaCo</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Patrick Hand',cursive;background:#B58963 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect width="60" height="60" fill="%23BC9270"/><circle cx="12" cy="14" r="1.4" fill="%23A87B58"/><circle cx="42" cy="40" r="1.4" fill="%23A87B58"/><circle cx="28" cy="52" r="1.2" fill="%23A87B58"/></svg>');color:#4A3226;min-height:100vh;padding:30px 14px 90px}
+.album{max-width:680px;margin:0 auto;position:relative}
+.page{background:#E9DCC8;border-radius:4px;box-shadow:0 12px 34px rgba(70,40,20,.35);padding:34px 30px 40px;position:relative;margin-bottom:34px;overflow:visible}
+.page::before,.page::after{content:"";position:absolute;width:0;height:0;border-style:solid}
+.page::before{top:-6px;left:-6px;border-width:14px 14px 0 0;border-color:#8A5A3C transparent transparent transparent}
+.page::after{bottom:-6px;right:-6px;border-width:0 0 14px 14px;border-color:transparent transparent #8A5A3C transparent}
+.washi{position:absolute;width:118px;height:30px;background:repeating-linear-gradient(45deg,#F9BFDC 0 10px,#F7A9CC 10px 20px);opacity:.92;border-left:3px dashed rgba(255,255,255,.75);border-right:3px dashed rgba(255,255,255,.75);z-index:3}
+.stamp{position:absolute;top:22px;right:26px;width:74px;height:88px;border:2px dashed #C98A6B;background:#F4EAD8;display:flex;align-items:center;justify-content:center;font-size:2.4rem;transform:rotate(6deg);opacity:.95}
+.brand{font-family:'Special Elite',monospace;font-size:.85rem;letter-spacing:3px;color:#8A5A3C;text-transform:uppercase}
+h1{font-family:'Caveat',cursive;font-size:3.8rem;color:#D63384;line-height:.95;margin:8px 0 4px}
+.sub{font-family:'Special Elite',monospace;font-size:.95rem;color:#7A5A40;max-width:400px;line-height:1.6}
+.snap{margin:26px 0 8px;display:flex;justify-content:center}
+.photo{background:#FFFDF7;padding:14px 14px 12px;box-shadow:0 6px 18px rgba(70,40,20,.3);transform:rotate(-2.5deg);position:relative;max-width:330px}
+.photo .img{height:160px;background:linear-gradient(135deg,#FBE3EE,#F3B9D5);display:flex;align-items:center;justify-content:center;font-size:4rem;border:1px solid #E3C9B2}
+.photo .cap{font-family:'Caveat',cursive;font-size:1.45rem;color:#8A5A3C;text-align:center;padding-top:8px}
+.corner{position:absolute;width:0;height:0;border-style:solid}
+.c1{top:-4px;left:-4px;border-width:22px 22px 0 0;border-color:#D63384 transparent transparent transparent;opacity:.85}
+.c2{top:-4px;right:-4px;border-width:0 22px 22px 0;border-color:transparent #D63384 transparent transparent;opacity:.85}
+.c3{bottom:-4px;left:-4px;border-width:22px 0 0 22px;border-color:transparent transparent transparent #D63384;opacity:.85}
+.c4{bottom:-4px;right:-4px;border-width:0 0 22px 22px;border-color:transparent transparent #D63384 transparent;opacity:.85}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+.item{background:#FFFDF7;padding:16px 14px 14px;box-shadow:0 5px 14px rgba(70,40,20,.25);position:relative}
+.item:nth-child(odd){transform:rotate(-1.4deg)}
+.item:nth-child(even){transform:rotate(1.2deg)}
+.item .emo{font-size:2.4rem;display:block;text-align:center}
+.item h3{font-family:'Caveat',cursive;font-size:1.6rem;color:#D63384;text-align:center;line-height:1.05}
+.item p{font-family:'Special Elite',monospace;font-size:.72rem;color:#8A6A50;text-align:center;line-height:1.5;margin-top:4px}
+.item .price{display:block;text-align:center;font-family:'Caveat',cursive;font-size:1.5rem;color:#B03060;margin-top:6px}
+.tape2{position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);width:86px;height:22px;background:repeating-linear-gradient(45deg,#FFE1EE 0 8px,#FBC9E0 8px 16px);opacity:.95;border-left:2px dashed rgba(255,255,255,.8);border-right:2px dashed rgba(255,255,255,.8)}
+.bowline{text-align:center;font-size:1.6rem;margin:8px 0 0}
+.label{background:#FFFDF7;border:2px solid #8A5A3C;padding:18px 20px;margin-top:24px;transform:rotate(-.5deg);box-shadow:4px 4px 0 rgba(70,40,20,.25)}
+.label h2{font-family:'Caveat',cursive;font-size:2rem;color:#D63384}
+.label p{font-size:1.02rem;line-height:1.55;color:#5C4432}
+.cta{display:inline-block;background:#D63384;color:#fff;text-decoration:none;font-family:'Patrick Hand',cursive;font-weight:700;font-size:1.1rem;padding:13px 34px;border-radius:6px;margin-top:12px;box-shadow:4px 4px 0 #4A3226;transition:transform .15s}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #4A3226}
+footer{text-align:center;font-family:'Special Elite',monospace;color:#6B4A32;font-size:.85rem;margin-top:6px;letter-spacing:1px}
+.themepick{position:fixed;bottom:0;left:0;right:0;background:#3E2A1C;color:#F4EAD8;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px;font-size:.85rem;z-index:9}
+.themepick a{color:#3E2A1C;text-decoration:none;font-weight:700;background:#F9BFDC;padding:4px 12px;border-radius:4px}
+.themepick a.on{background:#D63384;color:#fff}
+@media(max-width:480px){.items{grid-template-columns:1fr 1fr}.item p{font-size:.68rem}}
+</style>
+</head>
+<body>
+<div class="album">
+  <div class="page">
+    <span class="washi" style="top:-14px;left:24px;transform:rotate(-5deg)"></span>
+    <span class="washi" style="top:-12px;right:30px;transform:rotate(4deg);background:repeating-linear-gradient(45deg,#FFE9B8 0 10px,#FFDf9E 10px 20px)"></span>
+    <span class="stamp">🔑</span>
+    <p class="brand">pikaco · scrapbook album · vol. 1</p>
+    <h1>our little<br>memory book 💗</h1>
+    <p class="sub">every keychain we print becomes somebody's tiny memory — a name, a bike, a couple, a language. this page is where they live.</p>
+    <div class="snap">
+      <div class="photo">
+        <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="img">🔑</div>
+        <div class="cap">"Ayesha" — first order of october ✨</div>
+      </div>
+    </div>
+    <div class="items">
+      <div class="item"><span class="tape2"></span><span class="emo">🔑</span><h3>name keychain</h3><p>any name · any font</p><span class="price">Rs. 499</span></div>
+      <div class="item"><span class="tape2"></span><span class="emo">🏍️</span><h3>bike plate</h3><p>your exact number</p><span class="price">Rs. 599</span></div>
+      <div class="item"><span class="tape2"></span><span class="emo">💞</span><h3>couple set</h3><p>2 halves · 1 heart</p><span class="price">Rs. 899</span></div>
+      <div class="item"><span class="tape2"></span><span class="emo">🇵🇰</span><h3>urdu name</h3><p>nastaliq script</p><span class="price">Rs. 549</span></div>
+    </div>
+  </div>
+  <div class="page">
+    <span class="washi" style="top:-14px;left:40px;transform:rotate(3deg)"></span>
+    <div class="bowline">🎀 🎀 🎀</div>
+    <div class="label">
+      <h2>how to order (it's easy, promise)</h2>
+      <p>🚚 <b>COD</b> — cash on delivery, all over pakistan, 2–3 days<br>
+      💳 <b>advance</b> — JazzCash / EasyPaisa, send the slip screenshot<br>
+      📦 packed in bubble wrap + a box that actually looks nice<br>
+      💌 custom names? urdu? weird ideas? we LOVE weird ideas.</p>
+      <a class="cta" href="https://wa.me/923000000000?text=Salam!%20I%20want%20a%20keychain%20for%20my%20scrapbook%20%F0%9F%92%97">order on whatsapp</a>
+    </div>
+    <footer>· glued by hand with love · © PikaCo ·</footer>
+  </div>
+</div>
+<div class="themepick">💡 <b>Idea 9 — Kraft Album</b> · Compare:
+  <a href="idea6.html">6</a><a href="idea7.html">7</a><a href="idea8.html">8</a><a class="on" href="idea9.html">9</a><a href="idea10.html">10</a>
+</div>
+</body>
+</html>
