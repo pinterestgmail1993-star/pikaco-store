@@ -36,7 +36,7 @@ a{color:inherit;text-decoration:none}
 .buy .btn-ghost:hover{border-color:var(--red);color:var(--red)}
 .btn-ghost:hover{border-color:var(--red)}
 .hero .frame{background:#fff;border-radius:22px;padding:14px;transform:rotate(2.5deg);box-shadow:0 24px 60px rgba(0,0,0,.45);max-width:400px;margin-left:auto}
-.hero .frame img{border-radius:14px;aspect-ratio:1/1;object-fit:cover;width:100%}
+.hero .frame img{border-radius:14px;aspect-ratio:1/1;object-fit:contain;width:100%;background:#fff}
 .hero .frame figcaption{text-align:center;color:#7a7268;font-size:13px;padding:9px 2px 3px}
 @media(max-width:840px){.hero .wrap{grid-template-columns:1fr;padding-top:44px}.hero .frame{margin:0 auto;transform:rotate(1.5deg)}}
 /* marquee */
@@ -55,7 +55,7 @@ section{padding:72px 0}
 .cat-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s}
 .cat-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(20,20,20,.12)}
 .cat-card .ph{background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.cat-card img{width:100%;height:100%;object-fit:cover}
+.cat-card img{width:100%;height:100%;object-fit:contain}
 .cat-card .tx{padding:16px 18px 18px;border-top:1px solid var(--line)}
 .cat-card h3{font-size:19px}
 .cat-card p{font-size:13.5px;color:var(--mut);margin-top:3px}
@@ -66,7 +66,7 @@ section{padding:72px 0}
 .p-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;position:relative}
 .p-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(20,20,20,.12)}
 .p-card .ph{background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.p-card img,.p-card video{width:100%;height:100%;object-fit:cover}
+.p-card img,.p-card video{width:100%;height:100%;object-fit:contain}
 .p-card .vidtag{position:absolute;top:10px;left:10px;background:var(--black);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;letter-spacing:.5px}
 .p-card .tx{padding:15px 17px 17px;display:flex;flex-direction:column;gap:4px;flex:1;border-top:1px solid var(--line)}
 .p-card h3{font-size:16.5px;line-height:1.3}
@@ -120,11 +120,11 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
 .pd{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;padding:26px 0 10px}
 @media(max-width:880px){.pd{grid-template-columns:1fr}}
 .gallery .main{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
-.gallery .main img,.gallery .main video{width:100%;height:100%;object-fit:cover}
+.gallery .main img,.gallery .main video{width:100%;height:100%;object-fit:contain}
 .thumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
 .thumbs .th{width:72px;height:72px;border-radius:12px;overflow:hidden;border:2px solid transparent;background:#fff;cursor:pointer;padding:0}
 .thumbs .th.on,.thumbs .th:hover{border-color:var(--red)}
-.thumbs img{width:100%;height:100%;object-fit:cover}
+.thumbs img{width:100%;height:100%;object-fit:contain}
 .buy h1{font-size:clamp(28px,3.6vw,40px);margin:6px 0 14px}
 .buy .price{font-family:'Fraunces',serif;font-size:30px;color:var(--red);font-weight:700}
 .buy .price small{font-size:14px;color:var(--mut);font-weight:500;font-family:'Inter',sans-serif}
