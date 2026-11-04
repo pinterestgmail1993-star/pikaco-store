@@ -103,6 +103,18 @@ async function handleAdmin(path, request, env, db) {
   if (!checkAuth(request, env)) {
     return json({ error: "unauthorized" }, 401);
   }
+  if (path === "/admin/clear" && request.method === "POST") {
+    let b;
+    try { b = await request.json(); } catch { return json({ error: "bad json" }, 400); }
+    const what = b.what === "orders" ? "orders" : (b.what === "analytics" ? "analytics" : null);
+    if (!what) return json({ error: "what must be 'analytics' or 'orders'" }, 400);
+    if (what === "analytics") {
+      await db.batch([db.prepare("DELETE FROM visits"), db.prepare("DELETE FROM cart_events")]);
+    } else {
+      await db.prepare("DELETE FROM orders").run();
+    }
+    return json({ ok: true, cleared: what });
+  }
   if (path === "/admin/stats") {
     const now = Date.now();
     const [vToday, v7, uniq, avgDur, addsToday, daily, topPages, topProducts,

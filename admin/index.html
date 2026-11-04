@@ -63,6 +63,8 @@ select.cancelled{border-color:#c62828;color:#c62828}
  <span class="logo">Pika<b>Co</b></span><h1>Admin Panel</h1>
  <span class="spacer"></span>
  <button class="btn ghost" id="refresh" style="display:none">Refresh</button>
+ <button class="btn ghost" id="clearan" style="display:none;color:#c62828">Clear analytics</button>
+ <button class="btn ghost" id="clearor" style="display:none;color:#c62828">Clear orders</button>
  <button class="btn ghost" id="logout" style="display:none">Logout</button>
 </div></header>
 
@@ -113,7 +115,7 @@ function logout(){sessionStorage.removeItem("pika_auth");location.reload()}
 async function load(){
  try{
   var r=await fetch("/api/admin/stats",{headers:headers()});
-  if(r.status===401){sessionStorage.removeItem("pika_auth");$("login").style.display="block";$("dash").style.display="none";$("logout").style.display="none";$("refresh").style.display="none";$("err").textContent="Wrong username or password";return}
+  if(r.status===401){sessionStorage.removeItem("pika_auth");$("login").style.display="block";$("dash").style.display="none";$("logout").style.display="none";$("refresh").style.display="none";$("clearan").style.display="none";$("clearor").style.display="none";$("err").textContent="Wrong username or password";return}
   if(r.status===503){$("login").style.display="none";$("setup").style.display="block";return}
   var d=await r.json();
   render(d);
@@ -126,7 +128,7 @@ function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return
 
 function render(d){
  $("login").style.display="none";$("setup").style.display="none";
- $("dash").style.display="block";$("logout").style.display="inline-block";$("refresh").style.display="inline-block";
+ $("dash").style.display="block";$("logout").style.display="inline-block";$("refresh").style.display="inline-block";$("clearan").style.display="inline-block";$("clearor").style.display="inline-block";
  var cards=[
   [d.visitsToday,"visits today"],[d.visits7d,"visits 7 days"],[d.uniqueVisitors,"unique visitors"],
   [fmtDur(d.avgDuration),"avg time on page"],[d.cartAddsToday,"cart adds today"],
@@ -154,6 +156,17 @@ async function setStatus(id,status){
 }
 
 $("refresh").onclick=load;$("logout").onclick=logout;
+$("clearan").onclick=async function(){
+ if(!confirm("Delete ALL analytics (visits + cart events)? Cannot be undone."))return;
+ var r=await fetch("/api/admin/clear",{method:"POST",headers:headers(),body:JSON.stringify({what:"analytics"})});
+ if(r.ok){load()}else{alert("Failed ("+r.status+")")}
+};
+$("clearor").onclick=async function(){
+ if(!confirm("Delete ALL orders? Only do this to remove test orders — real orders will be lost too."))return;
+ if(!confirm("Really delete every order permanently?"))return;
+ var r=await fetch("/api/admin/clear",{method:"POST",headers:headers(),body:JSON.stringify({what:"orders"})});
+ if(r.ok){load()}else{alert("Failed ("+r.status+")")}
+};
 if(auth())load();else $("u").focus();
 setInterval(function(){if(sessionStorage.pika_auth&&$("dash").style.display==="block")load()},60000);
 </script>
