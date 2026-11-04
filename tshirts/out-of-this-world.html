@@ -102,6 +102,43 @@ section{padding:72px 0}
 .p-card .pr small{color:var(--mut);font-weight:500;font-size:12px}
 .payline{display:inline-block;margin-top:12px;font-size:13px;color:var(--mut);text-decoration:underline;text-underline-offset:3px}
 .payline:hover{color:var(--red)}
+.btn-dark2{background:var(--black);color:#fff}
+.btn-dark2:hover{filter:brightness(1.35)}
+.btn-dark2.done{background:#2e7d32}
+.material{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:840px){.material{grid-template-columns:1fr}}
+.pill2{display:inline-block;background:#fff;border:1px solid var(--line);padding:6px 13px;border-radius:99px;font-size:13px;margin:0 6px 8px 0}
+.alsearch{margin-top:20px;font-size:13.5px;color:var(--mut)}
+.alsearch a{color:var(--red);text-decoration:underline;text-underline-offset:3px;margin-right:6px;white-space:nowrap}
+/* cart dock */
+.cartdock .cfab{position:fixed;right:18px;bottom:18px;z-index:90;width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;border:0;box-shadow:0 10px 26px rgba(214,40,40,.45);display:grid;place-items:center;cursor:pointer}
+.cfab svg{width:24px;height:24px;fill:#fff}
+.ccount{position:absolute;top:-4px;right:-4px;background:var(--black);color:#fff;font-size:11px;font-weight:700;min-width:20px;height:20px;border-radius:99px;display:grid;place-items:center;padding:0 5px;border:2px solid var(--cream)}
+.cdrawer{position:fixed;top:0;right:-420px;width:min(380px,100vw);height:100vh;background:#fff;z-index:95;box-shadow:-16px 0 48px rgba(0,0,0,.25);transition:right .28s;display:flex;flex-direction:column}
+.cartdock.open .cdrawer{right:0}
+.chead{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line);font-size:17px}
+.cclose{background:none;border:0;font-size:26px;line-height:1;color:var(--mut);cursor:pointer}
+.cbody{flex:1;overflow-y:auto;padding:14px 18px}
+.citem{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.citem .cinfo b{font-size:14px;display:block}
+.citem .cinfo span{color:var(--mut);font-size:12.5px}
+.qty{display:flex;align-items:center;gap:10px;margin-top:6px}
+.qty button{width:26px;height:26px;border-radius:8px;border:1.5px solid var(--line);background:#fff;font-weight:700;cursor:pointer}
+.cright{text-align:right}
+.crm{background:none;border:0;color:var(--mut);text-decoration:underline;font-size:12px;cursor:pointer;margin-top:8px}
+.ctotal{display:flex;justify-content:space-between;padding:14px 0;font-size:16px;font-weight:600}
+.cfoot{padding:12px 18px 18px;border-top:1px solid var(--line)}
+.ccheckout{display:block;width:100%;background:var(--red);color:#fff;border:0;padding:14px;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer}
+.ccheckout:disabled{opacity:.4}
+.cform input,.cform textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:10px;font-family:inherit;font-size:14px}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--red)}
+.cpaynote{font-size:12.5px;color:var(--mut);margin:2px 0 12px}
+.csubmit{display:block;width:100%;background:var(--red);color:#fff;border:0;padding:14px;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer}
+.cback{background:none;border:0;margin-top:8px;color:var(--mut);text-decoration:underline;cursor:pointer;font-size:13px}
+.cempty{color:var(--mut);text-align:center;padding:40px 10px;font-size:14px}
+.cdone{text-align:center;padding:26px 6px}
+.cdone h3{margin:8px 0 6px}
+.cwa{display:block;background:#25D366;color:#fff;padding:13px;border-radius:12px;font-weight:700;text-align:center;margin-top:14px}
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media(max-width:840px){.steps{grid-template-columns:1fr}}
@@ -231,6 +268,7 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
   <p class="intro">Out of this world. Good energy. One very chill alien with headphones, glowing green on black oversized cotton. For people whose music is loud, vibes are cosmic and group chat replies come from another dimension.</p>
   <a class="btn btn-red" href="https://wa.me/923215516711?text=Assalam%20o%20alaikum%21%20I%20want%20the%20Out%20of%20This%20World%20Oversized%20Tee%20please" target="_blank" rel="noopener">Order on WhatsApp</a>
   <a class="btn btn-ghost" style="display:block;text-align:center" href="/tshirts/">See more like this</a>
+  <button class="btn btn-dark2 atcbtn" type="button" data-slug="out-of-this-world" data-name="Out of This World Oversized Tee" data-price="1499">Add to Cart</button>
   <a class="payline" href="/payment/">How to pay? JazzCash / EasyPaisa &rarr; screenshot on WhatsApp &rarr; we print &amp; ship &rarr;</a>
   <div class="mini"><span>2-3 day delivery</span><span>JazzCash &amp; EasyPaisa</span><span>Printed fresh</span></div>
  </div>
@@ -241,6 +279,16 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
  <ul><li>Chill alien with headphones design</li><li>Neon green glows on black cotton</li><li>Oversized drop-shoulder fit, S to XXL</li><li>Soft 180 GSM cotton, DTF print</li><li>White and navy versions in the gallery</li></ul>
 </div>
 <section><div class="wrap"><div class="sec-head"><span class="tag">Real talk</span><h2>Sound familiar?</h2><p>Real problems we hear every week. Real fixes, printed fresh.</p></div><div class="pain"><div class="pair"><div class="prob"><span class="lab">Their problem</span>Alien tees are either creepy or kid stuff.</div><div class="sol"><span class="lab ok">Our fix</span>One chill alien with headphones, out of this world, good energy. Certified cool.</div></div><div class="pair"><div class="prob"><span class="lab">Their problem</span>Neon colors look washed on cheap tees.</div><div class="sol"><span class="lab ok">Our fix</span>DTF on black cotton keeps the greens properly radioactive.</div></div><div class="pair"><div class="prob"><span class="lab">Their problem</span>Oversized tees from local shops are hit and miss.</div><div class="sol"><span class="lab ok">Our fix</span>Drop-shoulder cut, thick fabric, no surprises.</div></div></div></div></section>
+
+<section style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+ <div class="sec-head"><span class="tag">Good to know</span><h2>Material, finish &amp; where to use it</h2></div>
+ <div class="material">
+  <div class="step"><div class="n">&#9679;</div><h3>Material quality</h3><p>Soft combed cotton with DTF press printing that bonds ink into the fabric. Wash inside out, skip the dryer, stays bright for years.</p></div>
+  <div class="step"><div class="n">&#9679;</div><h3>Finish &amp; care</h3><p>Regular fit and oversized drop-shoulder fits, heavyweight feel, prints pressed sharp with every design detail intact.</p><p style="margin-top:10px"><span class="pill2">University and streetwear fits</span><span class="pill2">Eid and birthday gifting</span><span class="pill2">Gaming and meme squads</span><span class="pill2">Couple and friend-group tees</span></p></div>
+  <div class="step"><div class="n">&#9679;</div><h3>Why buy from PikaCo</h3><ul style="padding-left:18px;color:#6f675c;font-size:14px"><li>Rs 1199 regular, Rs 1499 oversized — printed locally</li><li>Six colors: black, white, navy, grey, maroon, sand</li><li>Any size and color on WhatsApp</li><li>Designs you will not find on Daraz</li></ul></div>
+ </div>
+ <p class="alsearch">People also search: <a href="/tshirts/">oversized tshirt Pakistan</a><a href="/tshirts/retro-arcade-game-on">graphic tees online</a><a href="/tshirts/gorilla-drummer-oversized">streetwear Pakistan</a></p>
+</div></section>
 <div class="two" style="margin-top:44px">
  <div><section style="padding-top:24px"><div class="sec-head"><span class="tag">Reviews</span><h2>What Pakistan says</h2></div><div class="rev"><div class="r"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Alien wala print dekh ke sab ne poocha kahan se liya. Fit mast.&rdquo;</p><div class="who">Hassan B. <span>&mdash; Lahore</span></div></div><div class="r"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Neon green on black is such a vibe. Quality achi, print crisp.&rdquo;</p><div class="who">Laiba R. <span>&mdash; Karachi</span></div></div></div></section></div>
  <div><section><div class="sec-head"><span class="tag">Good questions</span><h2>Everything you asked us</h2></div><div class="faq"><details><summary>How do I order this one?</summary><p>Tap the WhatsApp button, say which cutie you want and your city. We confirm the price, you pay via JazzCash or EasyPaisa, and we print and dispatch within 24 to 48 hours, anywhere in Pakistan.</p></details><details><summary>Can it be customized?</summary><p>Often yes, names, numbers and color swaps are our specialty. Message us on WhatsApp with what you have in mind and we will send a preview before printing.</p></details><details><summary>How is it delivered and packed?</summary><p>In a padded box, wrapped like the tiny treasure it is. Two to three working days to your door anywhere in Pakistan. Pay securely via JazzCash or EasyPaisa before we dispatch.</p></details></div></section></div>
@@ -281,4 +329,153 @@ document.querySelectorAll('.thumbs .th').forEach(function(b){
   else{var i=document.createElement('img');i.id='mainmed';i.src=s;i.alt='product photo';m.replaceWith(i);}
  });
 });
+</script>
+<div class="cartdock" id="cartdock">
+<button class="cfab" type="button" aria-label="Open cart"><svg viewBox="0 0 24 24"><path d="M7.2 18.4c-1 0-1.8.8-1.8 1.8s.8 1.8 1.8 1.8 1.8-.8 1.8-1.8-.8-1.8-1.8-1.8zm9.6 0c-1 0-1.8.8-1.8 1.8s.8 1.8 1.8 1.8 1.8-.8 1.8-1.8-.8-1.8-1.8-1.8zM7.4 15h9.9c.75 0 1.41-.41 1.75-1.03l3.55-6.47c.34-.62-.11-1.4-.82-1.4H5.27L4.27 3H1v2h2l3.6 7.59-1.35 2.44C4.52 16.37 5.48 18 7 18h12v-2H7l1.1-2z" transform="translate(1 -1) scale(.92)"/></svg><span class="ccount">0</span></button>
+<div class="cdrawer">
+ <div class="chead"><b>Your Cart</b><button class="cclose" type="button" aria-label="Close">&times;</button></div>
+ <div class="cview-cart" style="display:block">
+  <div class="cbody"><div class="cempty">Your cart is empty.<br>Tap &ldquo;Add to Cart&rdquo; on any cutie you like.</div></div>
+  <div class="cfoot"><button class="ccheckout" type="button">Checkout &mdash; Prepaid Order</button></div>
+ </div>
+ <div class="cview-form" style="display:none">
+  <div class="cbody">
+   <form class="cform">
+    <input name="name" placeholder="Your name" required>
+    <input name="phone" placeholder="Phone 03xx-xxxxxxx" required>
+    <input name="city" placeholder="City (Karachi, Lahore...)" required>
+    <textarea name="address" rows="2" placeholder="Full address for delivery" required></textarea>
+    <textarea name="notes" rows="2" placeholder="Any customization note (optional)"></textarea>
+    <p class="cpaynote">Prepaid order: we confirm your total + JazzCash / EasyPaisa details on WhatsApp right after you place it. Nothing ships without your confirmation.</p>
+    <button class="csubmit" type="submit">Place Order</button>
+    <button class="cback" type="button">Back to cart</button>
+   </form>
+  </div>
+ </div>
+ <div class="cview-done" style="display:none">
+  <div class="cbody"><div class="cdone">
+   <div style="font-size:44px;color:#2e7d32">&#10003;</div>
+   <h3>Order <span class="done-id"></span> received!</h3>
+   <p style="color:var(--mut);font-size:14px">We will confirm your total and send JazzCash / EasyPaisa payment details on WhatsApp within minutes.</p>
+   <a class="cwa" href="#">Confirm on WhatsApp</a>
+   <button class="cclose" type="button">Continue shopping</button>
+  </div></div>
+ </div>
+</div>
+</div><script>(function(){
+ try{
+  var sid=localStorage.pika_sid;if(!sid){sid=Math.random().toString(36).slice(2,10)+Date.now().toString(36);localStorage.pika_sid=sid}
+  var t0=Date.now(),sent=false;
+  var path=location.pathname;
+  function send(d){
+   d.sid=sid;d.path=path;d.ref=document.referrer||"";
+   var body=JSON.stringify(d);
+   try{navigator.sendBeacon("/api/track",new Blob([body],{type:"application/json"}))}
+   catch(e){fetch("/api/track",{method:"POST",body:body,keepalive:true}).catch(function(){})}
+  }
+  send({type:"visit"});
+  function bye(){if(sent)return;sent=true;send({type:"duration",dur:Math.round((Date.now()-t0)/1000)})}
+  addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")bye()});
+  addEventListener("pagehide",bye);
+  window.pikaTrack=function(d){try{send(d)}catch(e){}};
+ }catch(e){}
+})();
+</script><script>(function(){
+ try{
+  var CURR="Rs ";
+  function cart(){try{return JSON.parse(localStorage.pika_cart||"[]")}catch(e){return[]}}
+  function save(c){localStorage.pika_cart=JSON.stringify(c);render()}
+  function count(){return cart().reduce(function(n,i){return n+i.qty},0)}
+  function total(){return cart().reduce(function(n,i){return n+i.qty*i.price},0)}
+
+  var root=document.getElementById("cartdock");
+  if(!root)return;
+  function render(){
+   var c=cart(),n=count(),t=total();
+   root.querySelector(".ccount").textContent=n;
+   root.querySelector(".ccount").style.display=n?"grid":"none";
+   var body=root.querySelector(".cbody");
+   if(!c.length){
+    body.innerHTML='<div class="cempty">Your cart is empty.<br>Tap "Add to Cart" on any cutie you like.</div>';
+   }else{
+    body.innerHTML=c.map(function(i,idx){
+     return '<div class="citem"><div class="cinfo"><b>'+esc(i.name)+'</b><span>'+CURR+i.price+' each</span>'+
+      '<div class="qty"><button data-a="dec" data-i="'+idx+'">&minus;</button><b>'+i.qty+'</b><button data-a="inc" data-i="'+idx+'">+</button></div></div>'+
+      '<div class="cright"><b>'+CURR+(i.price*i.qty)+'</b><button class="crm" data-a="rm" data-i="'+idx+'">remove</button></div></div>';
+    }).join("")+'<div class="ctotal"><span>Total</span><b>'+CURR+t+'</b></div>';
+   }
+   root.querySelector(".ccheckout").disabled=!c.length;
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(x){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]})}
+
+  document.addEventListener("click",function(e){
+   var atc=e.target.closest(".atcbtn");
+   if(atc){
+    var c=cart(),slug=atc.dataset.slug,name=atc.dataset.name,price=parseInt(atc.dataset.price,10);
+    var ex=c.find(function(i){return i.slug===slug});
+    if(ex)ex.qty++;else c.push({slug:slug,name:name,price:price,qty:1});
+    save(c);
+    window.pikaTrack&&pikaTrack({type:"cart",action:"add",slug:slug,name:name,price:price});
+    atc.textContent="Added to cart \u2713";atc.classList.add("done");
+    setTimeout(function(){atc.textContent="Add to Cart";atc.classList.remove("done")},1400);
+    root.classList.add("open");
+    return;
+   }
+   var act=e.target.closest("[data-a]");
+   if(act){
+    var a=act.dataset.a,i=+act.dataset.i,c=cart();
+    if(a==="inc")c[i].qty++;
+    if(a==="dec"){c[i].qty--;if(c[i].qty<1)c.splice(i,1)}
+    if(a==="rm"){window.pikaTrack&&pikaTrack({type:"cart",action:"remove",slug:c[i].slug,name:c[i].name,price:c[i].price});c.splice(i,1)}
+    save(c);return;
+   }
+   if(e.target.closest(".cfab")){root.classList.toggle("open");return}
+   if(e.target.closest(".cclose")){root.classList.remove("open");return}
+   if(e.target.closest(".ccheckout")){showForm();return}
+   if(e.target.closest(".cback")){showCart();return}
+  });
+
+  function showCart(){
+   root.querySelector(".cview-cart").style.display="block";
+   root.querySelector(".cview-form").style.display="none";
+   root.querySelector(".cview-done").style.display="none";
+  }
+  function showForm(){
+   window.pikaTrack&&pikaTrack({type:"cart",action:"checkout_start",slug:"",name:"checkout",price:total()});
+   root.querySelector(".cview-cart").style.display="none";
+   root.querySelector(".cview-form").style.display="block";
+   root.querySelector(".cview-done").style.display="none";
+  }
+
+  root.querySelector(".cform").addEventListener("submit",async function(ev){
+   ev.preventDefault();
+   var btn=root.querySelector(".csubmit");
+   var f=ev.target;
+   btn.disabled=true;btn.textContent="Placing order...";
+   try{
+    var r=await fetch("/api/order",{method:"POST",headers:{"content-type":"application/json"},
+     body:JSON.stringify({sid:localStorage.pika_sid||"",name:f.name.value,phone:f.phone.value,
+       city:f.city.value,address:f.address.value,notes:f.notes.value,items:cart()})});
+    var d=await r.json();
+    if(!d.ok)throw new Error(d.error||"failed");
+    var lines=cart().map(function(i){return "\u2022 "+i.name+(i.qty>1?" x"+i.qty:"")+" \u2014 Rs "+(i.price*i.qty)}).join("\n");
+    var msg="Assalam o alaikum! Order #"+d.id+" placed on your website:\n"+lines+"\nTotal: Rs "+d.total+
+      "\nName: "+f.name.value+"\nPhone: "+f.phone.value+"\nCity: "+f.city.value+"\nAddress: "+f.address.value+
+      (f.notes.value?"\nNote: "+f.notes.value:"")+"\nPlease confirm the total and payment details. Shukriya!";
+    root.querySelector(".done-id").textContent="Order #"+d.id;
+    root.querySelector(".cwa").href="https://wa.me/923215516711?text="+encodeURIComponent(msg);
+    cart().forEach(function(i){window.pikaTrack&&pikaTrack({type:"cart",action:"order_placed",slug:i.slug,name:i.name,price:i.price})});
+    save([]);
+    root.querySelector(".cview-cart").style.display="none";
+    root.querySelector(".cview-form").style.display="none";
+    root.querySelector(".cview-done").style.display="block";
+   }catch(err){
+    alert("Could not place the order ("+(err.message||"network")+"). Please order on WhatsApp instead — the red button works always.");
+   }
+   btn.disabled=false;btn.textContent="Place Order";
+  });
+
+  render();
+ }catch(e){}
+})();
 </script></body></html>

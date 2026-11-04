@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#141414">
+<title>PikaCo Admin — Analytics & Orders</title>
+<style>
+:root{--red:#D62828;--black:#141414;--cream:#FAF7F2;--line:#e9e2d8;--mut:#8a8175}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--cream);color:#1c1a18;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{background:var(--black);color:#fff;padding:14px 0}
+header .wrap{display:flex;align-items:center;gap:12px}
+.logo{font-weight:800;font-size:19px;letter-spacing:.3px}
+.logo b{color:var(--red)}
+.spacer{margin-left:auto}
+h1{font-size:17px;font-weight:600;color:#ddd}
+button{font-family:inherit;cursor:pointer}
+.btn{background:var(--red);color:#fff;border:0;padding:9px 18px;border-radius:10px;font-weight:600;font-size:14px}
+.btn.ghost{background:none;border:1.5px solid #3a3a3a;color:#ddd}
+.btn:hover{filter:brightness(1.1)}
+/* login */
+#login{max-width:380px;margin:80px auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 30px;text-align:center}
+#login h2{font-size:22px;margin-bottom:6px}
+#login p{color:var(--mut);font-size:13.5px;margin-bottom:20px}
+#login input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;margin-bottom:12px}
+#login input:focus{outline:none;border-color:var(--red)}
+#login .err{color:var(--red);font-size:13px;min-height:18px;margin-bottom:6px}
+/* dashboard */
+#dash{display:none;padding:26px 0 60px}
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:26px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.cards{grid-template-columns:repeat(2,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 14px}
+.card b{display:block;font-size:24px;color:var(--red)}
+.card span{font-size:12px;color:var(--mut)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:20px;overflow-x:auto}
+.panel h3{font-size:15px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{color:var(--mut);text-align:left;font-weight:600;padding:7px 8px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td .path{font-weight:500}
+.bars{display:flex;align-items:flex-end;gap:5px;height:120px;padding-top:8px}
+.bar{flex:1;background:var(--red);border-radius:4px 4px 0 0;min-height:2px;position:relative;opacity:.85}
+.bar i{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font-size:9.5px;color:var(--mut);font-style:normal;transform:scale(.85)}
+.bar:hover{opacity:1}
+.bar b{position:absolute;top:-16px;left:0;right:0;text-align:center;font-size:10px;color:var(--red)}
+select{padding:5px 8px;border-radius:8px;border:1.5px solid var(--line);font-size:12.5px;font-family:inherit}
+select.new{border-color:#e0a800;color:#9a6b00}
+select.confirmed{border-color:#1565c0;color:#1565c0}
+select.shipped{border-color:#6a1b9a;color:#6a1b9a}
+select.delivered{border-color:#2e7d32;color:#2e7d32}
+select.cancelled{border-color:#c62828;color:#c62828}
+.pill{display:inline-block;background:var(--cream);border:1px solid var(--line);padding:2px 9px;border-radius:99px;font-size:11.5px;margin:2px 3px 2px 0}
+#setup{display:none;background:#fff8e6;border:1px solid #e0c97a;border-radius:14px;padding:18px;margin-bottom:22px;font-size:14px}
+#setup ol{margin:8px 0 0 20px}
+#setup code{background:var(--cream);padding:1px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <span class="logo">Pika<b>Co</b></span><h1>Admin Panel</h1>
+ <span class="spacer"></span>
+ <button class="btn ghost" id="refresh" style="display:none">Refresh</button>
+ <button class="btn ghost" id="logout" style="display:none">Logout</button>
+</div></header>
+
+<div class="wrap">
+<div id="login">
+ <h2>Admin Login</h2>
+ <p>PikaCo analytics, carts and orders</p>
+ <div class="err" id="err"></div>
+ <input id="u" placeholder="Username" autocomplete="username">
+ <input id="p" type="password" placeholder="Password" autocomplete="current-password">
+ <button class="btn" style="width:100%" onclick="login()">Login</button>
+</div>
+
+<div id="setup">
+ <b>&#9888; Database not connected yet — one-time setup (2 minutes):</b>
+ <ol>
+  <li>Cloudflare dashboard &rarr; <b>Workers &amp; Pages &rarr; D1</b> &rarr; Create database &rarr; name it <code>pikaco-db</code></li>
+  <li>Go to <b>Workers &amp; Pages &rarr; pikaco-store &rarr; Settings &rarr; Bindings</b></li>
+  <li>Add binding &rarr; type <b>D1 database</b> &rarr; variable name <code>DB</code> &rarr; select <code>pikaco-db</code> &rarr; Save</li>
+  <li>Refresh this page — done. Optional: Settings &rarr; Environment variables &rarr; add <code>ADMIN_USER</code> / <code>ADMIN_PASS</code> to change the login.</li>
+ </ol>
+</div>
+
+<div id="dash">
+ <div class="cards" id="cards"></div>
+ <div class="panel"><h3>Visits — last 14 days</h3><div class="bars" id="bars"></div></div>
+ <div class="panel"><h3>Top pages (7 days) — views &amp; average time on page</h3>
+  <table id="pages"></table></div>
+ <div class="panel"><h3>Orders — latest 100</h3><table id="orders"></table></div>
+ <div class="panel"><h3>Most added to cart (30 days)</h3><div id="topprod"></div></div>
+ <div class="panel"><h3>Recent cart activity</h3><table id="carts"></table></div>
+</div>
+</div>
+
+<script>
+var $=function(x){return document.getElementById(x)};
+function auth(){return sessionStorage.pika_auth||""}
+function headers(){return {"Authorization":"Basic "+auth(),"content-type":"application/json"}}
+
+function login(){
+ var u=$("u").value.trim(),p=$("p").value;
+ if(!u||!p){$("err").textContent="Enter username and password";return}
+ sessionStorage.pika_auth=btoa(u+":"+p);
+ load();
+}
+function logout(){sessionStorage.removeItem("pika_auth");location.reload()}
+
+async function load(){
+ try{
+  var r=await fetch("/api/admin/stats",{headers:headers()});
+  if(r.status===401){sessionStorage.removeItem("pika_auth");$("login").style.display="block";$("dash").style.display="none";$("logout").style.display="none";$("refresh").style.display="none";$("err").textContent="Wrong username or password";return}
+  if(r.status===503){$("login").style.display="none";$("setup").style.display="block";return}
+  var d=await r.json();
+  render(d);
+ }catch(e){$("err").textContent="Network error: "+e}
+}
+
+function fmtDur(s){if(!s)return "—";if(s<60)return s+"s";return Math.floor(s/60)+"m "+(s%60)+"s"}
+function fmtTs(ts){var d=new Date(ts);return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short"})+" "+d.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+function render(d){
+ $("login").style.display="none";$("setup").style.display="none";
+ $("dash").style.display="block";$("logout").style.display="inline-block";$("refresh").style.display="inline-block";
+ var cards=[
+  [d.visitsToday,"visits today"],[d.visits7d,"visits 7 days"],[d.uniqueVisitors,"unique visitors"],
+  [fmtDur(d.avgDuration),"avg time on page"],[d.cartAddsToday,"cart adds today"],
+  ["Rs "+Number(d.revenue||0).toLocaleString(),d.orders.length+" orders"]];
+ $("cards").innerHTML=cards.map(function(c){return '<div class="card"><b>'+c[0]+'</b><span>'+c[1]+'</span></div>'}).join("");
+ var max=1;d.daily.forEach(function(x){if(x.n>max)max=x.n});
+ $("bars").innerHTML=d.daily.slice().reverse().map(function(x){
+  return '<div class="bar" style="height:'+Math.max(2,Math.round(x.n/max*100))+'%"><b>'+x.n+'</b><i>'+x.day.slice(5)+'</i></div>'}).join("");
+ $("pages").innerHTML="<tr><th>Page</th><th>Views</th><th>Avg time</th></tr>"+d.topPages.map(function(x){
+  return "<tr><td class='path'>"+esc(x.path)+"</td><td>"+x.v+"</td><td>"+fmtDur(Math.round(x.d||0))+"</td></tr>"}).join("");
+ var st=["new","confirmed","shipped","delivered","cancelled"];
+ $("orders").innerHTML="<tr><th>#</th><th>When</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th></tr>"+d.orders.map(function(o){
+  var items="";try{items=JSON.parse(o.items).map(function(i){return esc(i.name)+(i.qty>1?" x"+i.qty:"")}).join("<br>")}catch(e){items=esc(o.items)}
+  return "<tr><td>"+o.id+"</td><td>"+fmtTs(o.ts)+"</td><td>"+esc(o.name)+"<br><span style='color:var(--mut)'>"+esc(o.phone)+"<br>"+esc(o.city)+"</span></td><td>"+items+"</td><td><b>Rs "+o.total+"</b></td>"+
+   "<td><select class='"+o.status+"' onchange='setStatus("+o.id+",this.value)'>"+st.map(function(s){return "<option "+(s===o.status?"selected":"")+">"+s+"</option>"}).join("")+"</select></td></tr>"}).join("")
+  ||"<tr><td colspan=6 style='color:var(--mut)'>No orders yet — they will appear here the moment a customer checks out.</td></tr>";
+ $("topprod").innerHTML=d.topProducts.map(function(x){return '<span class="pill">'+esc(x.name)+" — "+x.n+'&times;</span>'}).join("")||"<span style='color:var(--mut)'>Nothing yet.</span>";
+ $("carts").innerHTML="<tr><th>When</th><th>Action</th><th>Product</th><th>Price</th></tr>"+d.recentCarts.map(function(x){
+  return "<tr><td>"+fmtTs(x.ts)+"</td><td>"+esc(x.action)+"</td><td>"+esc(x.name)+"</td><td>Rs "+x.price+"</td></tr>"}).join("");
+}
+
+async function setStatus(id,status){
+ await fetch("/api/admin/order_status",{method:"POST",headers:headers(),body:JSON.stringify({id:id,status:status})});
+ load();
+}
+
+$("refresh").onclick=load;$("logout").onclick=logout;
+if(auth())load();else $("u").focus();
+setInterval(function(){if(sessionStorage.pika_auth&&$("dash").style.display==="block")load()},60000);
+</script>
+</body>
+</html>
