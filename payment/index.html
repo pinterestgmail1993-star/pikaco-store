@@ -299,13 +299,13 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
   <div class="step"><div class="n">1</div><h3>Add to cart &amp; fill the form</h3><p>Pick your cuties, add them to the cart and fill the short checkout form — name, phone, city, address. Two minutes, no account needed.</p></div>
   <div class="step"><div class="n">2</div><h3>Pay in advance</h3><p>Place the order and pay the exact total by easy bank transfer — our account number and QR appear right on the payment screen. Use your order number as the reference.</p></div>
   <div class="step"><div class="n">3</div><h3>We confirm on your phone</h3><p>The moment payment lands in our account, we confirm on your phone number and start printing. Customization details get locked in too.</p></div>
-  <div class="step"><div class="n">4</div><h3>We print &amp; ship</h3><p>You get a photo of the finished piece before dispatch, then 2-3 working days to your door, anywhere in Pakistan.</p></div>
+  <div class="step"><div class="n">4</div><h3>We print &amp; ship</h3><p>Your tracking number reaches your WhatsApp within 48 hours of payment, then 2-3 working days to your door, anywhere in Pakistan.</p></div>
  </div>
 </div></section>
 <section style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
  <div class="sec-head"><span class="tag">Safe shopping</span><h2>Why prepaid is safe here</h2></div>
  <div class="steps">
-  <div class="step"><div class="n">&#9733;</div><h3>Photo before dispatch</h3><p>You see the finished product on WhatsApp before it leaves the workshop. Not happy? We fix it before it ships.</p></div>
+  <div class="step"><div class="n">&#9733;</div><h3>Tracking guarantee</h3><p>Tracking number on your WhatsApp within 48 hours of payment &mdash; or a full refund, every rupee back.</p></div>
   <div class="step"><div class="n">&#9733;</div><h3>Replacement promise</h3><p>Item arrives damaged? Send one photo, we reprint and reship free. No forms, no fighting, no fine print.</p></div>
   <div class="step"><div class="n">&#9733;</div><h3>Tracking on WhatsApp</h3><p>The courier tracking number arrives straight in your chat, Karachi se Khyber tak.</p></div>
  </div>
@@ -361,7 +361,7 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
    <div style="font-size:44px;color:#2e7d32">&#10003;</div>
    <h3>Order <span class="done-id"></span> received!</h3>
    <p style="color:var(--mut);font-size:14px">Amount to pay: <b class="done-total" style="color:#D62828;font-size:18px"></b> &mdash; pay in advance to confirm your order.</p>
-   <div class="paybox" style="background:#faf6f0;border:1px solid #eadfce;border-radius:14px;padding:12px 14px;text-align:left;font-size:14px;line-height:1.55;color:#3d3630"><img src="/assets/img/pay-qr.webp" alt="PikaCo payment QR - scan with any banking app" style="width:170px;border-radius:12px;border:1px solid #eadfce;display:block;margin:0 auto 10px"><b>Faysal Bank</b><br>Account title: <b>RABIA</b><br><span style="color:#8a7f70">Scan the QR with any banking app &mdash; account fills in automatically. Use your order number as the payment reference.<br>Pay only to this account &mdash; PikaCo never asks for card PINs or OTP codes.</span></div>
+   <div class="paybox" style="background:#faf6f0;border:1px solid #eadfce;border-radius:14px;padding:12px 14px;text-align:left;font-size:14px;line-height:1.55;color:#3d3630"><div style="background:#fff8e1;border:1.5px solid #f0b429;border-radius:10px;padding:9px 11px;margin-bottom:10px;font-size:13px;line-height:1.5;color:#6b4d00">&#128737;&#65039; <b>Money-Back Dispatch Guarantee</b> &mdash; since each piece is uniquely 3D-customized for you, we work fully prepaid. <b>100% money back</b> if your tracking number doesn&rsquo;t reach your WhatsApp within <b>48 hours</b> of payment.</div><img src="/assets/img/pay-qr.webp" alt="PikaCo payment QR - scan with any banking app" style="width:170px;border-radius:12px;border:1px solid #eadfce;display:block;margin:0 auto 10px"><b>Faysal Bank</b><br>Account title: <b>RABIA</b><br><span style="color:#8a7f70">Scan the QR with any banking app &mdash; account fills in automatically. Use your order number as the payment reference.<br>Pay only to this account &mdash; PikaCo never asks for card PINs or OTP codes.</span><a class="done-wa-qr" href="https://wa.me/923215516711?text=Assalam%20o%20alaikum%21%20Sending%20my%20payment%20proof" target="_blank" rel="noopener" style="display:block;background:#25D366;color:#fff;text-align:center;padding:11px;border-radius:12px;font-weight:700;margin-top:10px;text-decoration:none;font-size:13.5px">Having trouble scanning? WhatsApp us your payment proof &rarr; 0321 5516711</a></div>
    <p style="color:var(--mut);font-size:13px;margin:10px 0 0">Pay within 24 hours to keep your order reserved. We confirm on your phone the moment payment arrives, then printing starts.</p>
    <button class="cclose" type="button">Continue shopping</button>
   </div></div>
@@ -465,6 +465,8 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
     var d=await r.json();
     if(!d.ok)throw new Error(d.error||"failed");
     root.querySelectorAll(".done-id").forEach(function(el){el.textContent="#"+d.id});
+    var waHref="https://wa.me/923215516711?text="+encodeURIComponent("Assalam o alaikum PikaCo! Order #"+d.id+" \u2014 sending my payment proof (Rs "+d.total+" paid by bank transfer)");
+    root.querySelectorAll(".done-wa-qr").forEach(function(el){el.href=waHref});
     root.querySelectorAll(".done-total").forEach(function(el){el.textContent=CURR+d.total});
     cart().forEach(function(i){window.pikaTrack&&pikaTrack({type:"cart",action:"order_placed",slug:i.slug,name:i.name,price:i.price})});
     save([]);

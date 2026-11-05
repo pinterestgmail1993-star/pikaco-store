@@ -312,7 +312,7 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
   <h2>Who else sees your data</h2>
   <p>Realistically: me, and the courier. The courier receives the name, phone and address on the shipping label because physics. We share nothing with anyone beyond what a parcel needs to reach you.</p>
   <h2>WhatsApp conversations</h2>
-  <p>If you message us on WhatsApp, the chat stays on our phones for order history and quality promises (like your photo approval). We do not add you to broadcast lists or send promotions you did not ask for.</p>
+  <p>If you message us on WhatsApp, the chat stays on our phones for order history and quality promises (like your tracking guarantee). We do not add you to broadcast lists or send promotions you did not ask for.</p>
   <h2>How long we keep it</h2>
   <p>Order details are kept for as long as needed for warranties and reprints, then cleaned out. Ask us to delete your data anytime and it is gone within 7 days, with a confirmation message saying so.</p>
   <h2>Children</h2>
@@ -372,7 +372,7 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
    <div style="font-size:44px;color:#2e7d32">&#10003;</div>
    <h3>Order <span class="done-id"></span> received!</h3>
    <p style="color:var(--mut);font-size:14px">Amount to pay: <b class="done-total" style="color:#D62828;font-size:18px"></b> &mdash; pay in advance to confirm your order.</p>
-   <div class="paybox" style="background:#faf6f0;border:1px solid #eadfce;border-radius:14px;padding:12px 14px;text-align:left;font-size:14px;line-height:1.55;color:#3d3630"><img src="/assets/img/pay-qr.webp" alt="PikaCo payment QR - scan with any banking app" style="width:170px;border-radius:12px;border:1px solid #eadfce;display:block;margin:0 auto 10px"><b>Faysal Bank</b><br>Account title: <b>RABIA</b><br><span style="color:#8a7f70">Scan the QR with any banking app &mdash; account fills in automatically. Use your order number as the payment reference.<br>Pay only to this account &mdash; PikaCo never asks for card PINs or OTP codes.</span></div>
+   <div class="paybox" style="background:#faf6f0;border:1px solid #eadfce;border-radius:14px;padding:12px 14px;text-align:left;font-size:14px;line-height:1.55;color:#3d3630"><div style="background:#fff8e1;border:1.5px solid #f0b429;border-radius:10px;padding:9px 11px;margin-bottom:10px;font-size:13px;line-height:1.5;color:#6b4d00">&#128737;&#65039; <b>Money-Back Dispatch Guarantee</b> &mdash; since each piece is uniquely 3D-customized for you, we work fully prepaid. <b>100% money back</b> if your tracking number doesn&rsquo;t reach your WhatsApp within <b>48 hours</b> of payment.</div><img src="/assets/img/pay-qr.webp" alt="PikaCo payment QR - scan with any banking app" style="width:170px;border-radius:12px;border:1px solid #eadfce;display:block;margin:0 auto 10px"><b>Faysal Bank</b><br>Account title: <b>RABIA</b><br><span style="color:#8a7f70">Scan the QR with any banking app &mdash; account fills in automatically. Use your order number as the payment reference.<br>Pay only to this account &mdash; PikaCo never asks for card PINs or OTP codes.</span><a class="done-wa-qr" href="https://wa.me/923215516711?text=Assalam%20o%20alaikum%21%20Sending%20my%20payment%20proof" target="_blank" rel="noopener" style="display:block;background:#25D366;color:#fff;text-align:center;padding:11px;border-radius:12px;font-weight:700;margin-top:10px;text-decoration:none;font-size:13.5px">Having trouble scanning? WhatsApp us your payment proof &rarr; 0321 5516711</a></div>
    <p style="color:var(--mut);font-size:13px;margin:10px 0 0">Pay within 24 hours to keep your order reserved. We confirm on your phone the moment payment arrives, then printing starts.</p>
    <button class="cclose" type="button">Continue shopping</button>
   </div></div>
@@ -476,6 +476,8 @@ footer .base{border-top:1px solid #2b2b2b;padding-top:20px;display:flex;justify-
     var d=await r.json();
     if(!d.ok)throw new Error(d.error||"failed");
     root.querySelectorAll(".done-id").forEach(function(el){el.textContent="#"+d.id});
+    var waHref="https://wa.me/923215516711?text="+encodeURIComponent("Assalam o alaikum PikaCo! Order #"+d.id+" \u2014 sending my payment proof (Rs "+d.total+" paid by bank transfer)");
+    root.querySelectorAll(".done-wa-qr").forEach(function(el){el.href=waHref});
     root.querySelectorAll(".done-total").forEach(function(el){el.textContent=CURR+d.total});
     cart().forEach(function(i){window.pikaTrack&&pikaTrack({type:"cart",action:"order_placed",slug:i.slug,name:i.name,price:i.price})});
     save([]);
